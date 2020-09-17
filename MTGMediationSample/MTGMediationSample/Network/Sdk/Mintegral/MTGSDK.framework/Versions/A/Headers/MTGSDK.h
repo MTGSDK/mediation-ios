@@ -6,21 +6,31 @@
 //
 
 
-#define MTGSDKVersion @"4.9.0"
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <MTGSDK/MTGNativeAdManager.h>
+#import <MTGSDK/MTGBidNativeAdManager.h>
 #import <MTGSDK/MTGCampaign.h>
 #import <MTGSDK/MTGTemplate.h>
 #import <MTGSDK/MTGFrame.h>
-#import <MTGSDK/MTGNativeScrollView.h>
 #import <MTGSDK/MTGMediaView.h>
 #import <MTGSDK/MTGUserInfo.h>
 
 
+#define MTGSDKVersion @"6.6.0"
+
+
+
 @interface MTGSDK : NSObject
 
+
+/**
+* The version of the SDK.
+*
+* @return The current version of the SDK.
+*/
++(NSString *_Nonnull)sdkVersion;
 
 /**
  * The shared instance of the SDK.
@@ -45,14 +55,16 @@
  
  @abstract The method that kicks off the preloading of native ads. It may be called again in the future to refresh the ads manually.
  
+ @param placementId The id of the ad placement. You can create your placement id from our Portal.
  @param unitId The id of the ad unit. You can create your unit id from our Portal.
  
  @param fbPlacementId The Facebook PlacementID is used to request ads from Facebook. You can also set the placementID in our portal. The ID you set in our web portal will replace the ID you set here in future.
  @param numAdsRequested The number of ads you would like to preload. Max number is 10. If you pass any number bigger than 10, it will be reset to 10.
  */
-- (void)preloadNativeAdsWithUnitId:(nonnull NSString *)unitId
-                     fbPlacementId:(nullable NSString *)fbPlacementId
-                forNumAdsRequested:(NSUInteger)numAdsRequested;
+- (void)preloadNativeAdsWithPlacementId:(nullable NSString *)placementId
+                                 unitId:(nonnull NSString *)unitId
+                          fbPlacementId:(nullable NSString *)fbPlacementId
+                     forNumAdsRequested:(NSUInteger)numAdsRequested;
 
 /**
  *
@@ -60,6 +72,7 @@
  
  @abstract The method that kicks off the preloading of native ads. It may be called again in the future to refresh the ads manually.
  
+ @param placementId The id of the ad placement. You can create your placement id from our Portal.
  @param unitId The id of the ad unit. You can create your unit id from our Portal.
  
  @param fbPlacementId The Facebook PlacementID is used to request ads from Facebook. You can also set the placementID in our portal. The ID you set in our web portal will replace the ID you set here in future.
@@ -68,10 +81,11 @@
  
  @param numAdsRequested The number of ads you would like to preload. Max number is 10. If you pass any number bigger than 10, it will be reset to 10.
  */
-- (void)preloadNativeAdsWithUnitId:(nonnull NSString *)unitId
-                     fbPlacementId:(nullable NSString *)fbPlacementId
-                     videoSupport:(BOOL)videoSupport
-                forNumAdsRequested:(NSUInteger)numAdsRequested;
+- (void)preloadNativeAdsWithPlacementId:(nullable NSString *)placementId
+                                 unitId:(nonnull NSString *)unitId
+                          fbPlacementId:(nullable NSString *)fbPlacementId
+                           videoSupport:(BOOL)videoSupport
+                     forNumAdsRequested:(NSUInteger)numAdsRequested;
 
 /**
  *
@@ -79,23 +93,26 @@
  
  @abstract The method that kicks off the preloading of native ads. It may be called again in the future to refresh the ads manually.
  
+ @param placementId The id of the ad placement. You can create your placement id from our Portal.
  @param unitId The id of the ad unit. You can create your unit id from our Portal.
  @param fbPlacementId The Facebook PlacementID is used to request ads from Facebook. You can also set the placementID in our portal. The ID you set in our web portal will replace the ID you set here in future.
  @param templates This array contains objects of MTGTemplate. See more detail in definition of MTGTemplate.
  @param autoCacheImage If you pass YES, SDK will download the image resource automatically when you get the campaign.
  @param adCategory Decide what kind of ads you want to retrieve. Games, apps or all of them. The default is All.
  */
-- (void)preloadNativeAdsWithUnitId:(nonnull NSString *)unitId
-                     fbPlacementId:(nullable NSString *)fbPlacementId
-                supportedTemplates:(nullable NSArray *)templates
-                    autoCacheImage:(BOOL)autoCacheImage
-                        adCategory:(MTGAdCategory)adCategory;
+- (void)preloadNativeAdsWithPlacementId:(nullable NSString *)placementId
+                                 unitId:(nonnull NSString *)unitId
+                          fbPlacementId:(nullable NSString *)fbPlacementId
+                     supportedTemplates:(nullable NSArray *)templates
+                         autoCacheImage:(BOOL)autoCacheImage
+                             adCategory:(MTGAdCategory)adCategory;
 /**
  *
  @method
  
  @abstract The method that kicks off the preloading of native frames. It may be called again in the future to refresh the frames manually.
  
+ @param placementId The id of the ad placement. You can create your placement id from our Portal.
  @param unitId The id of the ad unit. You can create your unit id from our Portal.
  @param fbPlacementId The Facebook PlacementID is used to request ads from Facebook. You can also set the placementID in our portal. The ID you set in our web portal will replace the ID you set here in future.
  @param templates This array contains objects of MTGTemplate. See more detail in definition of MTGTemplate.
@@ -103,22 +120,14 @@
  @param adCategory Decide what kind of ads you want to retrieve. Games, apps or all of them. The default is All.
  @param frameNum The number of frames you would like to preload. Max number is 10. If you pass any number bigger than 10, it will be reset to 10.
  */
-- (void)preloadNativeFramesWithUnitId:(nonnull NSString *)unitId
-                        fbPlacementId:(nullable NSString *)fbPlacementId
-              supportedFrameTemplates:(nullable NSArray *)templates
-                       autoCacheImage:(BOOL)autoCacheImage
-                           adCategory:(MTGAdCategory)adCategory
-                             frameNum:(NSUInteger)frameNum DEPRECATED_ATTRIBUTE;
+- (void)preloadNativeFramesWithPlacementId:(nullable NSString *)placementId
+                                    unitId:(nonnull NSString *)unitId
+                             fbPlacementId:(nullable NSString *)fbPlacementId
+                   supportedFrameTemplates:(nullable NSArray *)templates
+                            autoCacheImage:(BOOL)autoCacheImage
+                                adCategory:(MTGAdCategory)adCategory
+                                  frameNum:(NSUInteger)frameNum DEPRECATED_ATTRIBUTE;
 
-/**
- *
- @method
- 
- @abstract The method that kicks off the preloading of app wall ads. It may be called again in the future to refresh the ads manually.
- 
- @param unitId The id of the ad unit. You can create your unit id from our Portal.
- */
-- (void)preloadAppWallAdsWithUnitId:(nonnull NSString *)unitId;
 
 
 @property (nonatomic, assign) BOOL autoSetAudioCategory;
@@ -129,20 +138,25 @@
  Set YES to indicate the user's data will be collected otherwise NO. Default to be YES.
  
 @abstract According to the GDPR, set method of this property must be called before "setAppID: ApiKey:", or by default will collect user's information.
-@Attention Do not mix the usage of `setConsentStatus:` and `setUserPrivateInfoType:agree` simultaneously in your app.
+ @Attention Do not mix the usage of `setConsentStatus:` and `setUserPrivateInfoType:agree` simultaneously in your app.
  */
 @property (nonatomic, assign) BOOL consentStatus;
 
-- (void)setUserInfo:(nonnull MTGUserInfo *)userInfo;
+/**
+ Set user GDPR authorization IDFV information
+ Disable the collection of idfv , Default to be NO.
+ 
+ */
+@property (nonatomic, assign) BOOL disableIDFV;
 
 /**
- Show the privacy consent authorization tips view.
- 
- @abstract This method must be called before "setAppID: ApiKey:", Or by default will collect user information.
-
- @param callback A block that accepts a Bool and an NSError as input parameters. The NSError parameter which provides information on a failed consent update request, the Bool parameter which provides the updated consent status.
+ If set to YES, the server will not display personalized ads based on the user's personal information
+ When receiving the user's request, and will not synchronize the user's information to other third-party partners.
+ Default is NO
  */
-- (void)showConsentInfoTips:(nullable void (^)(BOOL consentStatus, NSError *_Nullable error))callback;
+@property (nonatomic, assign) BOOL doNotTrackStatus;
+
+- (void)setUserInfo:(nonnull MTGUserInfo *)userInfo;
 
 
 /**
@@ -164,16 +178,6 @@
  @abstract You can get all status for current 'MTGUserPrivateType' by using this method.
  */
 - (MTGUserPrivateTypeInfo *_Nonnull)userPrivateInfo DEPRECATED_MSG_ATTRIBUTE("Use `[MTGSDK sharedInstance] consentStatus` instead");
-
-/**
- *
- @method Show the privacy authorization tips view
- 
- @abstract This method must be called before "setAppID: ApiKey:", Or by default will collect user information;
- Authorization tips view is added upon the "window”, don't cover it.
- @param block result block.
- */
-- (void)showUserPrivateInfoTips:(MTGUserPrivateInfoTipsResultBlock _Nonnull )block DEPRECATED_MSG_ATTRIBUTE("Use `[MTGSDK sharedInstance] showConsentInfoTips:` instead");
 
 
 @end

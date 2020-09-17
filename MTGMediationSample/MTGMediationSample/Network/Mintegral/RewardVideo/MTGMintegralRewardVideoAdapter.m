@@ -11,12 +11,19 @@
 #import "MTGRewardVideoConstants.h"
 #import "MintegralAdapterHelper.h"
 
-#import <MTGSDK/MTGSDK.h>
-#import <MTGSDKReward/MTGRewardAdManager.h>
+#if __has_include(<MTGSDKReward/MTGRewardAdManager.h>)
+
+    #import <MTGSDK/MTGSDK.h>
+    #import <MTGSDKReward/MTGRewardAdManager.h>
+#else
+    #import "MTGSDK.h"
+    #import "MTGRewardAdManager.h"
+#endif
 
 @interface MTGMintegralRewardVideoAdapter () <MTGRewardAdLoadDelegate,MTGRewardAdShowDelegate>
 
 @property (nonatomic, copy) NSString *adUnit;
+@property (nonatomic, copy) NSString *placementId;
 @property (nonatomic, copy) NSString *rewardId;
 @property (nonatomic, copy) NSString *userId;
 
@@ -28,9 +35,11 @@
     // The default implementation of this method does nothing. Subclasses must override this method
     // and implement code to load a rewarded video here.
     
-    NSString *appId;
-    NSString *appKey;
-    NSString *unitId;
+    NSString *appId = nil;
+    NSString *appKey = nil;
+    NSString *unitId = nil;
+    NSString *placementId = nil;
+
     if([info objectForKey:MTG_APPID]){
         appId = [NSString stringWithFormat:@"%@",[info objectForKey:MTG_APPID]];
     }
@@ -40,12 +49,16 @@
     if([info objectForKey:MTG_REWARDVIDEO_UNITID]){
         unitId = [NSString stringWithFormat:@"%@",[info objectForKey:MTG_REWARDVIDEO_UNITID]];
     }
-    
+    if ([info objectForKey:MTG_REWARDVIDEO_PLACEMENTID]) {
+        placementId = [NSString stringWithFormat:@"%@",[info objectForKey:MTG_REWARDVIDEO_PLACEMENTID]];
+    }
+
     NSString *errorMsg = nil;
     if (!appId) errorMsg = @"Invalid MTG appId";
     if (!appKey) errorMsg = @"Invalid MTG appKey";
     if (!unitId) errorMsg = @"Invalid MTG unitId";
-    
+    if (!placementId) errorMsg = @"Invalid MTG placementId";
+
     if (errorMsg) {
         NSError *error = [NSError errorWithDomain:@"com.mintegral" code:-1 userInfo:@{NSLocalizedDescriptionKey : errorMsg}];
         
@@ -57,6 +70,8 @@
     }
     
     self.adUnit = unitId;
+    self.placementId = placementId;
+
     if([info objectForKey:MTG_REWARDVIDEO_REWARDID]){
         self.rewardId = [NSString stringWithFormat:@"%@",[info objectForKey:MTG_REWARDVIDEO_REWARDID]];
     }
@@ -72,7 +87,7 @@
             [MintegralAdapterHelper sdkInitialized];
         }
 
-        [[MTGRewardAdManager sharedInstance] loadVideo:self.adUnit delegate:self];
+        [[MTGRewardAdManager sharedInstance] loadVideoWithPlacementId:placementId unitId:self.adUnit delegate:self];
     });
 }
 
@@ -80,7 +95,7 @@
     // Subclasses must override this method and implement coheck whether or not a rewarded vidoe ad
     // is available for presentation.
     
-    return [[MTGRewardAdManager sharedInstance] isVideoReadyToPlay:self.adUnit];
+    return [[MTGRewardAdManager sharedInstance] isVideoReadyToPlayWithPlacementId:self.placementId unitId:self.adUnit];
 }
 
 - (void)presentRewardedVideoFromViewController:(UIViewController *)viewController{
@@ -89,8 +104,8 @@
     
     if ([self hasAdAvailable]) {
         
-        if ([[MTGRewardAdManager sharedInstance] respondsToSelector:@selector(showVideo:withRewardId:userId:delegate:viewController:)]) {
-            [[MTGRewardAdManager sharedInstance] showVideo:self.adUnit withRewardId:self.rewardId userId:self.userId delegate:self viewController:viewController];
+        if ([[MTGRewardAdManager sharedInstance] respondsToSelector:@selector(showVideoWithPlacementId:unitId:withRewardId:userId:delegate:viewController:)]) {
+            [[MTGRewardAdManager sharedInstance] showVideoWithPlacementId:self.placementId unitId:self.adUnit withRewardId:self.rewardId userId:self.userId delegate:self viewController:viewController];
         }
         
     } else {
@@ -111,20 +126,17 @@
  *
  *  @param unitId - the unitId string of the Ad that was loaded.
  */
-- (void)onVideoAdLoadSuccess:(nullable NSString *)unitId{
+- (void)onVideoAdLoadSuccess:(nullable NSString *)placementId unitId:(nullable NSString *)unitId{
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(rewardedVideoDidLoadAdForCustomEvent:)]) {
         [self.delegate rewardedVideoDidLoadAdForCustomEvent:self];
     }
 }
 
-/**
- *  Called when there was an error loading the ad.
- *
- *  @param unitId      - the unitId string of the Ad that failed to load.
- *  @param error       - error object that describes the exact error encountered when loading the ad.
- */
-- (void)onVideoAdLoadFailed:(nullable NSString *)unitId error:(nonnull NSError *)error{
+
+
+
+- (void)onVideoAdLoadFailed:(nullable NSString *)placementId unitId:(nullable NSString *)unitId error:(nonnull NSError *)error{
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(rewardedVideoDidFailToLoadAdForCustomEvent: error:)]) {
         [self.delegate rewardedVideoDidFailToLoadAdForCustomEvent:self error:error];
@@ -136,7 +148,7 @@
  *
  *  @param unitId - the unitId string of the Ad that display success.
  */
-- (void)onVideoAdShowSuccess:(nullable NSString *)unitId{
+- (void)onVideoAdShowSuccess:(nullable NSString *)placementId unitId:(nullable NSString *)unitId{
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(rewardVideoAdDidShowForCustomEvent:)]) {
         [self.delegate rewardVideoAdDidShowForCustomEvent:self];
@@ -149,11 +161,10 @@
  *  @param unitId      - the unitId string of the Ad that failed to be displayed.
  *  @param error       - error object that describes the exact error encountered when showing the ad.
  */
-- (void)onVideoAdShowFailed:(nullable NSString *)unitId withError:(nonnull NSError *)error{
-    
+- (void)onVideoAdShowFailed:(nullable NSString *)placementId unitId:(nullable NSString *)unitId withError:(nonnull NSError *)error{
+
     if (self.delegate && [self.delegate respondsToSelector:@selector(rewardVideoAdDidFailToPlayForCustomEvent: error:)]) {
         [self.delegate rewardVideoAdDidFailToPlayForCustomEvent:self error:error];
-        
     }
 }
 
@@ -162,7 +173,7 @@
  *
  *  @param unitId - the unitId string of the Ad clicked.
  */
-- (void)onVideoAdClicked:(nullable NSString *)unitId{
+- (void)onVideoAdClicked:(nullable NSString *)placementId unitId:(nullable NSString *)unitId{
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(rewardVideoAdDidReceiveTapEventForCustomEvent: )]) {
         [self.delegate rewardVideoAdDidReceiveTapEventForCustomEvent:self];
@@ -176,7 +187,7 @@
  *  @param converted   - BOOL describing whether the ad has converted
  *  @param rewardInfo  - the rewardInfo object containing an array of reward objects that should be given to your user.
  */
-- (void)onVideoAdDismissed:(nullable NSString *)unitId withConverted:(BOOL)converted withRewardInfo:(nullable MTGRewardAdInfo *)rewardInfo{
+- (void)onVideoAdDismissed:(nullable NSString *)placementId unitId:(nullable NSString *)unitId withConverted:(BOOL)converted withRewardInfo:(nullable MTGRewardAdInfo *)rewardInfo{
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(rewardVideoAdWillDisappearForCustomEvent: )]) {
             [self.delegate rewardVideoAdWillDisappearForCustomEvent:self];
@@ -192,6 +203,5 @@
         [self.delegate rewardVideoAdShouldRewardForCustomEvent:self reward:reward];
     }
 }
-
 
 @end

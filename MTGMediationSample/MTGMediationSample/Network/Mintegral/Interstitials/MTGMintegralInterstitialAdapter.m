@@ -10,8 +10,13 @@
 #import "MTGInterstitialConstants.h"
 #import "MintegralAdapterHelper.h"
 
-#import <MTGSDK/MTGSDK.h>
-#import <MTGSDKInterstitialVideo/MTGInterstitialVideoAdManager.h>
+#if __has_include(<MTGSDKInterstitialVideo/MTGInterstitialVideoAdManager.h>)
+
+    #import <MTGSDK/MTGSDK.h>
+    #import <MTGSDKInterstitialVideo/MTGInterstitialVideoAdManager.h>
+#else
+    #import "MTGInterstitialVideoAdManager.h"
+#endif
 
 @interface MTGMintegralInterstitialAdapter () <MTGInterstitialVideoDelegate>
 
@@ -27,9 +32,11 @@ static BOOL isInterstitialSuccess = NO;
 
 - (void)requestInterstitialWithCustomEventInfo:(NSDictionary *)info{
     
-    NSString *appId = @"";
-    NSString *appKey = @"";
-    NSString *unitId = @"";
+    NSString *appId = nil;
+    NSString *appKey = nil;
+    NSString *unitId = nil;
+    NSString *placementId = nil;
+
     if([info objectForKey:MTG_APPID]){
         appId = [NSString stringWithFormat:@"%@",[info objectForKey:MTG_APPID]];
     }
@@ -39,12 +46,16 @@ static BOOL isInterstitialSuccess = NO;
     if([info objectForKey:MTG_INTERSTITIAL_UNITID]){
         unitId = [NSString stringWithFormat:@"%@",[info objectForKey:MTG_INTERSTITIAL_UNITID]];
     }
-    
+    if ([info objectForKey:MTG_INTERSTITIAL_PLACEMENTID]) {
+        placementId = [NSString stringWithFormat:@"%@",[info objectForKey:MTG_INTERSTITIAL_PLACEMENTID]];
+    }
+
     NSString *errorMsg = nil;
     if (!appId) errorMsg = @"Invalid MTG appId";
     if (!appKey) errorMsg = @"Invalid MTG appKey";
     if (!unitId) errorMsg = @"Invalid MTG unitId";
-    
+    if (!placementId) errorMsg = @"Invalid MTG placementId";
+
     if (errorMsg) {
         NSError *error = [NSError errorWithDomain:@"com.mintegral" code:-1 userInfo:@{NSLocalizedDescriptionKey : errorMsg}];
         
@@ -66,7 +77,7 @@ static BOOL isInterstitialSuccess = NO;
         }
         
         if (!self.mtgInterstitialVideoAdManager) {
-            self.mtgInterstitialVideoAdManager = [[MTGInterstitialVideoAdManager alloc] initWithUnitID:self.adUnit delegate:self];
+            self.mtgInterstitialVideoAdManager = [[MTGInterstitialVideoAdManager alloc] initWithPlacementId:placementId unitId:self.adUnit delegate:self];
         }
         
         isInterstitialSuccess = NO;

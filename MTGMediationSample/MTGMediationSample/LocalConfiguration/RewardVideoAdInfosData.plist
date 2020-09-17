@@ -6,17 +6,19 @@
 	<array>
 		<dict>
 			<key>apikey</key>
-			<string>936dcbdd57fe235fd7cf61c2e93da3c4</string>
+			<string>7c22942b749fe6a6e361b675e96b3ee9</string>
 			<key>appid</key>
-			<string>92763</string>
+			<string>118692</string>
 			<key>classname</key>
 			<string>MTGMintegralRewardVideoAdapter</string>
 			<key>timeout</key>
 			<integer>10</integer>
 			<key>network</key>
 			<string>mintegral</string>
-			<key>unitid</key>
-			<string>21319</string>
+			<key>placementid</key>
+			<string>138798</string>
+            <key>unitid</key>
+            <string>146892</string>
 		</dict>
 		<dict>
 			<key>classname</key>
@@ -33,3 +35,4 @@
 	</array>
 </dict>
 </plist>
+

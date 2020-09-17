@@ -33,6 +33,12 @@ the media source, can be set again to reuse this view.
 
 // Auto replay, default YES
 @property (nonatomic, assign) BOOL  autoLoopPlay;
+/* show video process view or not. Default to be YES. */
+@property (nonatomic, assign) BOOL  showVideoProcessView;
+/* show sound indicator view or not. Default to be YES. */
+@property (nonatomic, assign) BOOL  showSoundIndicatorView;
+/* mute audio output of the video player or not. Default to be YES, means video player is muted. */
+@property (nonatomic, assign) BOOL mute;
 
 @property (nonatomic, strong, readonly) MTGCampaign *campaign;
 
@@ -56,7 +62,7 @@ the media source, can be set again to reuse this view.
  @abstract
  Sent just before an MTGMediaView will enter the fullscreen layout.
  
- @param mediaView An mediaView object sending the message.
+ @param mediaView  An mediaView object sending the message.
  */
 - (void)MTGMediaViewWillEnterFullscreen:(MTGMediaView *)mediaView;
 
@@ -66,9 +72,24 @@ the media source, can be set again to reuse this view.
  @abstract
  Sent after an FBMediaView has exited the fullscreen layout.
  
- @param mediaView An mediaView object sending the message.
+ @param mediaView  An mediaView object sending the message.
  */
 - (void)MTGMediaViewDidExitFullscreen:(MTGMediaView *)mediaView;
+
+
+/**
+ *  Called when the native video was starting to play.
+ *
+ *  @param mediaView  An mediaView object sending the message.
+ */
+- (void)MTGMediaViewVideoDidStart:(MTGMediaView *)mediaView;
+
+/**
+*  Called when  the video play completed.
+*
+*  @param mediaView  An mediaView object sending the message.
+*/
+- (void)MTGMediaViewVideoPlayCompleted:(MTGMediaView *)mediaView;
 
 /*!
  @method
@@ -121,6 +142,7 @@ the media source, can be set again to reuse this view.
                              error:(nullable NSError *)error  mediaView:(MTGMediaView *)mediaView;
 
 - (void)nativeAdImpressionWithType:(MTGAdSourceType)type mediaView:(MTGMediaView *)mediaView;
+
 
 @end
 

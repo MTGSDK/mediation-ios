@@ -8,7 +8,7 @@
 
 #ifndef MTGInterstitialConstants_h
 #define MTGInterstitialConstants_h
-
+#define MTG_INTERSTITIAL_PLACEMENTID  @"placementid"
 #define MTG_INTERSTITIAL_UNITID       @"unitid"
 #define MTG_INTERSTITIAL_CLASSNAME    @"classname"
 #define MTG_INTERSTITIAL_TIMEOUT      @"timeout"

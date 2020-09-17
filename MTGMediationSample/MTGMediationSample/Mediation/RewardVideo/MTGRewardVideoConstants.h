@@ -9,7 +9,7 @@
 #ifndef MTGRewardVideoConstants_h
 #define MTGRewardVideoConstants_h
 
-
+#define MTG_REWARDVIDEO_PLACEMENTID     @"placementid"
 #define MTG_REWARDVIDEO_UNITID          @"unitid"
 #define MTG_REWARDVIDEO_CLASSNAME       @"classname"
 #define MTG_REWARDVIDEO_TIMEOUT         @"timeout"
