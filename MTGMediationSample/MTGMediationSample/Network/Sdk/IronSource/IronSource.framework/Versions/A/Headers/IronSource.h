@@ -2,7 +2,7 @@
 //  Copyright © 2017 IronSource. All rights reserved.
 //
 
-static NSString * const MEDIATION_SDK_VERSION     = @"6.8.1";
+
 
 #ifndef IRONSOURCE_H
 #define IRONSOURCE_H
@@ -15,7 +15,6 @@ static NSString * const MEDIATION_SDK_VERSION     = @"6.8.1";
 #import "ISRewardedVideoDelegate.h"
 #import "ISOfferwallDelegate.h"
 #import "ISInterstitialDelegate.h"
-#import "ISRewardedInterstitialDelegate.h"
 #import "ISLogDelegate.h"
 #import "ISConfigurations.h"
 #import "ISPlacementInfo.h"
@@ -35,6 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 #define IS_OFFERWALL @"offerwall"
 #define IS_BANNER @"banner"
 
+static NSString * const MEDIATION_SDK_VERSION     = @"7.0.1";
+static NSString * GitHash = @"2274c4cf0";
 
 @interface IronSource : NSObject
 
@@ -133,6 +134,23 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)setSegmentDelegate:(id<ISSegmentDelegate>)delegate;
 
+
+/**
+@abstact Sets the meta data with a key and value.
+@discussion This value will be passed to the supporting ad networks.
+
+@param key The meta data key.
+@param value The meta data value
+
+*/
++ (void)setMetaDataWithKey:(NSString *)key value:(NSString *)value;
+
+/**
+@abstact used for demand only API, return the bidding data token.
+*/
+ + (NSString *) getISDemandOnlyBiddingData;
+
+    
 #pragma mark - SDK Initialization
 
 /**
@@ -243,19 +261,25 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setISDemandOnlyRewardedVideoDelegate:(id<ISDemandOnlyRewardedVideoDelegate>)delegate;
 
 /**
+ @abstract Loads a demand only rewarded video for a non bidder instance.
+ @discussion This method will load a demand only rewarded video ad for a non bidder instance.
+ @param instanceId The demand only instance id to be used to display the rewarded video.
+ */
++ (void)loadISDemandOnlyRewardedVideo:(NSString *)instanceId;
+
+/**
+ @abstract Loads a demand only rewarded video for a bidder instance.
+ @discussion This method will load a demand only rewarded video ad for a bidder instance.
+ @param instanceId The demand only instance id to be used to display the rewarded video.
+ */
++ (void)loadISDemandOnlyRewardedVideoWithAdm:(NSString *)instanceId adm:(NSString *)adm;
+
+/**
  @abstract Shows a demand only rewarded video using the default placement.
  @param viewController The UIViewController to display the rewarded video within.
  @param instanceId The demand only instance id to be used to display the rewarded video.
  */
 + (void)showISDemandOnlyRewardedVideo:(UIViewController *)viewController instanceId:(NSString *)instanceId;
-
-/**
- @abstract Shows a demand only rewarded video using the provided placement name.
- @param viewController The UIViewController to display the rewarded video within.
- @param placementName The placement name as was defined in the platform. If nil is passed, a default placement will be used.
- @param instanceId The demand only instance id to be used to display the rewarded video.
- */
-+ (void)showISDemandOnlyRewardedVideo:(UIViewController *)viewController placement:(nullable NSString *)placementName instanceId:(NSString *)instanceId;
 
 /**
  @abstract Determine if a locally cached demand only rewarded video exists for an instance id.
@@ -273,13 +297,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param delegate The 'ISInterstitialDelegate' for IronSource to send callbacks to.
  */
 + (void)setInterstitialDelegate:(id<ISInterstitialDelegate>)delegate;
-
-/**
- @abstract Sets the delegate for rewarded interstitial callbacks.
- 
- @param delegate The 'ISRewardedInterstitialDelegate' for IronSource to send callbacks to.
- */
-+ (void)setRewardedInterstitialDelegate:(id<ISRewardedInterstitialDelegate>)delegate;
 
 /**
  @abstract Loads an interstitial.
@@ -335,19 +352,19 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)loadISDemandOnlyInterstitial:(NSString *)instanceId;
 
 /**
- @abstract Show a demand only rewarded video using the default placement.
+ @abstract Loads a demand only interstitial bidder instance.
+ @discussion This method will load a demand only interstitial ad bidder instance.
+ @param instanceId The demand only instance id to be used to display the interstitial.
+ */
++ (void)loadISDemandOnlyInterstitialWithAdm:(NSString *)instanceId adm:(NSString *)adm;
+
+
+/**
+ @abstract Show a demand only interstitial using the default placement.
  @param viewController The UIViewController to display the interstitial within.
  @param instanceId The demand only instance id to be used to display the interstitial.
  */
 + (void)showISDemandOnlyInterstitial:(UIViewController *)viewController instanceId:(NSString *)instanceId;
-
-/**
- @abstract Show a demand only rewarded video using the provided placement name.
- @param viewController The UIViewController to display the interstitial within.
- @param placementName The placement name as was defined in the platform. If nil is passed, a default placement will be used.
- @param instanceId The demand only instance id to be used to display the interstitial.
- */
-+ (void)showISDemandOnlyInterstitial:(UIViewController *)viewController placement:(nullable NSString *)placementName instanceId:(NSString *)instanceId;
 
 /**
  @abstract Determine if a locally cached interstitial exists for a demand only instance id.

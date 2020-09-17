@@ -23,6 +23,7 @@
 @property (nonatomic, strong)   NSString            *version;
 @property (nonatomic, strong)   NSNumber            *adapterTimeOutInSeconds;
 @property (nonatomic, strong)   NSNumber            *maxNumOfAdaptersToLoadOnStart;
+@property (nonatomic, assign)   BOOL                advancedLoading;
 @property (nonatomic, strong)   NSString            *plugin;
 @property (nonatomic, strong)   NSString            *pluginVersion;
 @property (nonatomic, strong)   NSString            *pluginFrameworkVersion;
@@ -37,6 +38,7 @@
 @property (nonatomic, strong)   NSString            *categorizeType;
 @property (nonatomic, strong)   NSDictionary        *rvServerParams;
 @property (nonatomic, assign)   NSInteger           consent;
+@property (nonatomic, assign)   BOOL                didSetConsent;
 @property (nonatomic, strong)   NSDictionary        *batchGenricParams;
 @property (nonatomic, strong)   NSDictionary        *eventGenricParams;
 
@@ -46,6 +48,13 @@
 + (ISConfigurations *)configurations DEPRECATED_MSG_ATTRIBUTE("As of version 6.5.2, use class method: getConfigurations");
 
 + (ISConfigurations *)getConfigurations;
+
+typedef NS_ENUM(NSInteger, DebugLevel) {
+    None,
+    Error,
+    Info,
+    Verbose
+};
 
 @end
 

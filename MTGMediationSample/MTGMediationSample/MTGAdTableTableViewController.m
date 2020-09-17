@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Mintegral Ads";
+    self.title = @"Mediation Demo";
     self.tableView.tableFooterView = [UIView new];
 
     self.items = [NSMutableArray new];
