@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-#define MintegralAdapterVersion  @"1.0.0"
+#define MintegralAdapterVersion  @"1.1.0"
 
 @interface MintegralAdapterHelper : NSObject
 

@@ -410,8 +410,7 @@ Sample code：
 ## ChangeLog
 Version | ChangeLog | Date
 ------|-----------|------
-2.0.0 |Based on MTGSDK version 6.6.0, Ironsource SDK version 7.0.0,Support MTGSDK placementid | 2020.09.17
-1.0.0	|Mediation ironsource |
+1.0.0	| Mediated ironsource |
 		 
 		 
 

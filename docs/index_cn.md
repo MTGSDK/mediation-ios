@@ -348,7 +348,6 @@ MTGInterstitialAdManager *interstitialManager = [[MTGInterstitialAdManager alloc
 ## ChangeLog
 版本号 | changeLog | 发布时间
 ------|-----------|------
-2.0.0|聚合ironsource二期，基于MTGSDK 6.6.0版本，Ironsource SDK 7.0.0版本|2020.09.17
 1.0.0	|聚合ironsource一期|
 
 
