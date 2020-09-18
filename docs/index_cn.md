@@ -1,5 +1,7 @@
 
 # Mintegral聚合集成指南（iOS）
+[英文文档](../README.md)
+
 
 ## 概要
 
@@ -333,22 +335,11 @@ MTGInterstitialAdManager *interstitialManager = [[MTGInterstitialAdManager alloc
 ```
 
 
-## 版本介绍
-在MintegralAdapterHelper.h中定义了Mintegral Adapter的版本号   
-
-```java
-#define MintegralAdapterVersion  @"2.0.0"
-```
-
-在IronSourceAdapterHelper.h中定义了Ironsource Adapter的版本号    
-
-```java
-#define IronSourceAdapterVersion  @"2.0.0"
-```	 
 ## ChangeLog
 版本号 | changeLog | 发布时间
 ------|-----------|------
-1.0.0	|聚合ironsource一期|
+1.0.0|聚合 ironsource | 2019.02.17
+
 
 
 

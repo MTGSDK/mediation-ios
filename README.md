@@ -1,10 +1,10 @@
 
 # Mediation Integration Guide(iOS)
-
+[Chinese Document](./docs/index_cn.md)
 ## Overview    
 
-This document describes iOS developers how to aggregate other third-party ads SDK through Mintegral. 
-Currently only supported aggregated ironsource Rewarded Video,Interstitial,and Interstitial corresponds to Mintegral Interstitial.
+This document describes to Android developers how to aggregate other third-parties' ad SDK, through Mintegral. 
+Currently, we only support aggregation of ironSource's Rewarded Video and Interstitial ad formats; ironSource's Interstitial ad corresponds to Mintegral's Interstitial Video.
 
 ## Mintegral Setting
 
@@ -12,22 +12,22 @@ Currently only supported aggregated ironsource Rewarded Video,Interstitial,and I
 
 **App Key**      
 Each Mintegral account has a corresponding App Key, and the key will be needed for requesting ads. It can be retreived from your Mintegral account through the following path: **APP Setting -> App Key**:  
-![](./apikey.png)     
+![](./docs/apikey.png)     
 
 **App Id**       
 The M-system will automatically generate a corresponding App ID for each app created by the developer. Find the App ID(s)  here: **APP Setting -> APP ID**:        
-![](./appid.png)   
+![](./docs/appid.png)   
 
 **Placements & Units**    
 The M-system will automatically generate a corresponding placements for each ad space created by the developer. Find the Placement Id and Unit ID here: **APP Setting -> Placement Management -> Edit Placement & Unit**  
-![](./placement.png)  
+![](./docs/placement.png)  
 
 ### Obtain the SDK
 
 
 There are two ways to add Mintegral iOS-SDK to your Xcode project: using [Cocoapods](https://github.com/Mintegral-official/MintegralAdSDK-iOS-new) or [manual integration](https://github.com/Mintegral-official/MintegralAdSDK-iOS-new/releases).
       
-####Interstitial
+#### Interstitial
 To integrate Interstitial, the MTGSDK.framework and MTGSDKInterstitialVideo.framework files need to be imported.
 
 #### Rewarded Video
@@ -62,14 +62,14 @@ Add an App Transport Security Settings Dictionary in the info.plist file; and ad
 
 
 
-##ironsource Setting
+## ironsource Setting
 
 ### Create your account
-####[Sign up](https://platform.ironsrc.com/partners/signup)and[sign in](https://platform.ironsrc.com/partners/tour)to your ironSource account.     
-####New App 
+#### [Sign up](https://platform.ironsrc.com/partners/signup)and[sign in](https://platform.ironsrc.com/partners/tour)to your ironSource account.     
+#### New App 
 To add your application to the ironSource dashboard, click the **New App** button.
 
-![](./ir1.png)
+![](./docs/ir1.png)
 
 ### Enter app details
 
@@ -77,14 +77,14 @@ Select **Mobile App**, enter the **App Store** of your app, and click **Import A
 
 If your app is not available, select **App Not Live in the Application Store** and provide a **Temporary Name** for your app. Select Android as **platform** and click **Add App**.
 
-![](./ir2.png)
+![](./docs/ir2.png)
 
-####Unit Setting
+#### Unit Setting
 Take note of your new **App Key**, This value will used when load ads. Select the ad formats your app supports in the appropriate tabs. Then click **Done**.
 ![](https://developers.google.com/admob/images/mediation/ironsource/ad_format_select_android.png)
 
 
-###Integrating ironSource 
+### Integrating ironSource 
 Please read [ironsource iOS Intergration document](https://developers.ironsrc.com/ironsource-mobile/ios/getting-started-ironsource-ios-sdk-chinese/#step-1)to add the SDK to Your Project.         
 
 
@@ -101,18 +101,18 @@ Click [Github MTGMediationSample](https://github.com/Mintegral-official/mediatio
 
 
 ## Interstitial
-###Import header file
+### Import header file
 
 ```java
 #import "MTGInterstitialAdManager.h"
 ```
 
-###Create the MTGInterstitialAdManager
+### Create the MTGInterstitialAdManager
 
 You need to pass the adUnitId when initializing,Create a plist file, and enter your ad ID, adapter class name and other parameters as shown below. The Mintegral network needs to pass the appid, appkey, unitid that you applied in the Mintegral background. The ironsource needs to pass in the appkey that you applied in the ironsource background.**Item 0 is the firest call network.**      
 In addition to creating the form of the plist file, you can also set parameters in MTGAdInfo.                    
 
-![](./iOSplist.png)    
+![](./docs/iOSplist.png)    
 
 Sample code：        
 
@@ -126,7 +126,7 @@ Sample code：
 }
 ```
 
-###Set MTGInterstitialAdManagerDelegate
+### Set MTGInterstitialAdManagerDelegate
 ```java
 
 #pragma mark - MTGInterstitialAdManagerDelegate
@@ -231,11 +231,11 @@ Sample code：
 ```
 
 ### Show Interstitial ads
-####Check ads availability
+#### Check ads availability
 ```java
 [MTGInterstitialAdManager ready];
 ```
-####Show ads
+#### Show ads
 ```java
 - (void)presentInterstitialFromViewController:(UIViewController *)controller;
 
@@ -258,18 +258,18 @@ Sample code：
 
 
 
-##Rewarded Video
-###Import header file
+## Rewarded Video
+### Import header file
 ```java
 #import "MTGRewardVideo.h"
 ```
-###Load Rewarded Video
+### Load Rewarded Video
 You need to pass the adUnitId when initializing,Create a plist file, and enter your ad ID, adapter class name and other parameters as shown below. The Mintegral network needs to pass the appid, appkey, unitid that you applied in the Mintegral background. The ironsource needs to pass in the appkey that you applied in the ironsource background.**Item 0 is the firest call network.**       
 In addition to creating the form of the plist file, you can also set parameters in MTGAdInfo.             
 
-![](./iOSRVPlist.png)
+![](./docs/iOSRVPlist.png)
 
-####Register MTGRewardVideoDelegate
+#### Register MTGRewardVideoDelegate
 ```java
 [MTGRewardVideo registerRewardVideoDelegate:self];
     
@@ -381,11 +381,11 @@ Sample code：
 }
 ```
 ### Show RewaredVideo ads
-####Check ads availability
+#### Check ads availability
 ```java
 + (BOOL)hasAdAvailableForAdUnitID:(NSString *)adUnitID;
 ```
-####Show ads
+#### Show ads
 
 ```java
 + (void)presentRewardVideoAdForAdUnitID:(NSString *)adUnitID fromViewController:(UIViewController *)viewController;
@@ -404,13 +404,13 @@ Sample code：
 }
 ```
 
-##Adapter Version
+## Adapter Version
  you can see the adapter version number in IronSourceAdapterHelper.h and MintegralAdapterVersion.h
 
 ## ChangeLog
 Version | ChangeLog | Date
 ------|-----------|------
-1.0.0	| Mediated ironsource |
+1.0.0 |Mediate ironsource | 2019.02.17
 		 
 		 
 
