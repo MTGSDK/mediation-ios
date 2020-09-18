@@ -1,8 +1,6 @@
 
 # Mintegral聚合集成指南（iOS）
 
-[英文文档](../README.md)
-
 ## 概要
 
     
@@ -10,23 +8,24 @@
  
 
 ## 配置Mintegral
+您也可以通过[MTGSDK iOS 集成文档](https://dev.mintegral.com/doc/index.html?file=sdk-m_sdk-ios&lang=cn)了解更多关于 MTGSDK 的内容。
 ### 获取账号信息  
 
 **App Key**   
 登录Mintegral开发者后台，在**APP Setting -> APP Key**界面，可以查看到该账号的APP Key，如图所示：<br/><br/>
-![](./apikey.png) 
+![](./apikey.png)  
 
 **APP ID**   
 开发者每创建一个应用后，系统会自动生成App ID，可在**APP Setting -> APP ID**界面查看到已创建的应用以及对应的App ID，如图所示：<br/><br/>
-![](./appid.png) 
+![](./appid.png)  
 
- **Unit ID**
-开发者每创建一个广告位后，系统会自动生成Unit ID，可在**APP Setting -> AD Unit -> AD Unit ID**界面查看到已创建的广告位以及对应的Unit ID，如图所示： <br/><br/>
-![](./unitid.png)  
+ **Placements & Units**
+开发者每创建一个广告版位后，系统会自动生成Placement ID，可在**APP Setting -> Placement Management -> Edit Placement & Unit**界面添加或修改该广告版位的Unit Id，如图所示：<br/><br/>
+![](./placement.png)     
 
 ### 获取SDK
 
-[点击下载](http://cdn-adn.rayjump.com/cdn-adn/v2/portal/19/02/22/11/51/5c6f71d8e7289.zip)最新版本4.9.3。
+我们提供两种方式去集成Mintegral iOS-SDK:使用[Cocoapods](https://github.com/Mintegral-official/MintegralAdSDK-iOS-new)和[手动添加方式](https://github.com/Mintegral-official/MintegralAdSDK-iOS-new/releases)。
 
 #### Interstitial
 集成Interstitial，需要导入MTGSDK.framework和MTGSDKInterstitialVideo.framework
@@ -66,13 +65,12 @@ WebKit.framework<br/>
 
 
 ## 配置ironsource
-
 ### 创建账号
 #### [注册](https://platform.ironsrc.com/partners/signup)并[登录](https://platform.ironsrc.com/partners/tour)您的ironSource帐户。     
 #### 创建App 
 要将您的应用程序添加到ironSource dashboard，请单击 **New App** 按钮。
 
-![](./ir1.png)
+![](https://github.com/Vivi012/MTG/blob/master/ir1.png?raw=true)
 
 #### 进入应用详情
 
@@ -80,7 +78,7 @@ WebKit.framework<br/>
 
 如果您的应用程序不可用，请选择 **App Not Live in the Application Store**并提供**Temporary Name**。选择iOS平台，然后单击**Add App**。
 
-![](./ir2.png)
+![](https://github.com/Vivi012/MTG/blob/master/ir2.png?raw=true)
 
 
 #### 广告位配置
@@ -88,37 +86,17 @@ WebKit.framework<br/>
 ![](https://developers.google.com/admob/images/mediation/ironsource/ad_format_select_ios.png)
 
 ### 集成ironsource
-请仔细阅读[ironsource iOS 集成文档](https://developers.ironsrc.com/ironsource-mobile/ios/getting-started-ironsource-ios-sdk-chinese/#step-1)     
+您可以通过[IronSource iOS 集成文档](https://developers.ironsrc.com/ironsource-mobile/ios/ios-sdk/)了解更多关于 IronSource 的内容。 
 
 **添加 SDK 至您的项目**       
-ironSource SDK集成同时支持 Cocoapods 和手动下载两种途径：
-
-#### **使用 CocoaPods 集成 SDK**
 
 请在您的 podfile 中输入下行代码：
 
-    pod 'IronSourceSDK','6.6.3.1'
-
-#### **手动集成 SDK**
-
-请遵循以下步骤将 ironSource SDK 添加至您的项目中：
-
-1.  **添加 IronSource 框架** 在您下载 SDK 后；将其解压，并将 IronSource.framework 添加至您的 Xcode 工程中。
-2.  **链接器标记** 在构建设置中，添加以下链接器标记： **Target**➣ **Build** **Settings**➣ **Linking** ➣ **Other** **Linker Flags**: –****ObjC****
-    
-    **iOS 10 应用传输安全设置** **重要！**在 iOS9 中，Apple 加强了关于 ‘ATS’ 的控制。为确保所有的广告网络都能流畅的被调用，对您的 **info.plist** 文件进行以下更改很重要： 在此字典中，添加一个名为 ‘**NSAllowsArbitraryLoads**’的布尔值，并将其设置为 **YES**.  
-    [![ats](https://developers.ironsrc.com/wp-content/uploads/2016/08/ATS.gif)](https://developers.ironsrc.com/wp-content/uploads/2016/08/ATS.gif)
-    
-    注意：
-    
-    1.  请确保您的 info.plist 中除 ‘NSAllowsArbitraryLoads‘外不包含其他任何值，否则可能会造成冲突。
-    2.  请在此处查找更多关于 ATS 的信息。
-    
-
+    pod 'IronSourceSDK','7.0.1.0'
 
 
 ### 导入Adapter文件
-点击[这里](https://github.com/Mintegral-official/mediation-iOS/tree/master/MTGMediationSample/MTGMediationSample)中获取Mediation及Network包，并将其中的全部文档拷贝到您的项目中。
+您可以在[Github MTGMediationSample](https://github.com/Mintegral-official/mediation-ios/tree/master/MTGMediationSample/MTGMediationSample)中获取Mediation及Network包，并将其中的全部文档拷贝到您的项目中。
 
 ## Interstitial接入
 ### 导入头文件
@@ -127,11 +105,11 @@ ironSource SDK集成同时支持 Cocoapods 和手动下载两种途径：
 ```
 
 ### 创建 MTGInterstitialAdManager
-初始化时需要传入对应广告的adUnitID创建plist文件，按照下图传入您的广告Id，Adapter类名等参数，其中Mintegral network需要传入您在Mintegral后台申请的appid、appkey、unitid；ironsource需要传入您在ironsource后台申请的appkey.**Item 0的network为优先请求的广告**       
+初始化时需要传入对应广告的adUnitID创建plist文件，按照下图传入您的广告Id，Adapter类名等参数，其中Mintegral network需要传入您在Mintegral后台申请的appid、appkey、pv   lacementid、unitid；ironsource需要传入您在ironsource后台申请的appkey.**Item 0的network为优先请求的广告**       
 这里除了创建plist文件的形式，您还可以在MTGAdInfo中设定参数。
           
 
-![](./iOSplist.png)
+![](https://github.com/Vivi012/MTG/blob/master/iOSplist.png?raw=true)
 
 示例代码：        
 
@@ -250,7 +228,7 @@ MTGInterstitialAdManager *interstitialManager = [[MTGInterstitialAdManager alloc
 请求广告时需要传入对应广告的adUnitID。创建plist文件，按照下图传入您的广告Id，Adapter类名（classname）等参数，其中Mintegral network需要传入您在Mintegral后台申请的appid、appkey、unitid；ironsource需要传入您在ironsource后台申请的appkey。**Item 0的network为优先请求的广告。**       
 这里除了创建plist文件的形式，您还可以在MTGAdInfo中设定参数。                         
 
-![](./iOSRVPlist.png)
+![](https://github.com/Vivi012/MTG/blob/master/iOSRVPlist.png?raw=true)
 
 #### 注册MTGRewardVideoDelegate代理
 ```java
@@ -359,18 +337,20 @@ MTGInterstitialAdManager *interstitialManager = [[MTGInterstitialAdManager alloc
 在MintegralAdapterHelper.h中定义了Mintegral Adapter的版本号   
 
 ```java
-#define MintegralAdapterVersion  @"1.0.0"
+#define MintegralAdapterVersion  @"2.0.0"
 ```
 
 在IronSourceAdapterHelper.h中定义了Ironsource Adapter的版本号    
 
 ```java
-#define IronSourceAdapterVersion  @"1.0.0"
+#define IronSourceAdapterVersion  @"2.0.0"
 ```	 
 ## ChangeLog
 版本号 | changeLog | 发布时间
 ------|-----------|------
+2.0.0|聚合ironsource二期，基于MTGSDK 6.6.0版本，Ironsource SDK 7.0.0版本|2020.09.17
 1.0.0	|聚合ironsource一期|
+
 
 
 
