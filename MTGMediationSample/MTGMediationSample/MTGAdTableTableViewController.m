@@ -9,6 +9,7 @@
 #import "MTGAdTableTableViewController.h"
 #import "MTGRewardVideoViewController.h"
 #import "MTGInterstitialViewController.h"
+#import "MTGBannerViewController.h"
 
 @interface MTGAdTableTableViewController ()
 
@@ -26,6 +27,7 @@
     self.items = [NSMutableArray new];
     [self.items addObject:@"RewardVideo Ad"];
     [self.items addObject:@"Interstitial Ad"];
+    [self.items addObject:@"Banner Ad"];
 }
 
 #pragma mark - Table view data source
@@ -71,6 +73,9 @@
             //Interstitial
             [self toInterstitialViewController];
             break;
+        case 2:
+            //Banner
+            [self toMTGBannerViewController];
         default:
             break;
     }
@@ -87,5 +92,9 @@
     [self.navigationController pushViewController:[[MTGInterstitialViewController alloc] initWithNibName:@"MTGInterstitialViewController" bundle:nil] animated:YES];
 }
 
+- (void)toMTGBannerViewController{
+
+    [self.navigationController pushViewController:[[MTGBannerViewController alloc] initWithNibName:@"MTGBannerViewController" bundle:nil] animated:YES];
+}
 
 @end
