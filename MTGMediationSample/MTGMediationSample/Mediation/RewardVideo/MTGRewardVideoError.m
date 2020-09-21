@@ -8,4 +8,4 @@
 
 #import "MTGRewardVideoError.h"
 
-NSString * const MTGRewardVideoAdsSDKDomain = @"MTGRewardVideoAdsSDKDomain";
+NSString * const MTGRewardVideoAdsSDKDomain = @"com.mediation.rewardvideo";

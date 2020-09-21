@@ -46,4 +46,23 @@
     return networkInfos;
 }
 
+//Banner
++ (NSArray *)bannerAdUnitIds{
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"BannerAdInfosData" ofType:@"plist"];
+    NSDictionary *adUnitIdInfos = [NSDictionary dictionaryWithContentsOfFile:path];
+    NSArray *adUnitIds = adUnitIdInfos.allKeys;
+    return adUnitIds;
+}
+
++ (NSArray *)bannerInfosWithAdUnitId:(NSString *)adUnitId{
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"BannerAdInfosData" ofType:@"plist"];
+    NSDictionary *adUnitIdInfos = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    NSArray *networkInfos = [adUnitIdInfos objectForKey:adUnitId];
+    return networkInfos;
+}
+
+
 @end

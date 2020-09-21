@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 #define IS_BANNER @"banner"
 
 static NSString * const MEDIATION_SDK_VERSION     = @"7.0.1";
-static NSString * GitHash = @"2274c4cf0";
+static NSString * GitHash = @"5473a63ca";
 
 @interface IronSource : NSObject
 
