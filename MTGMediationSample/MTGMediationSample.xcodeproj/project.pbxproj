@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3840214F251B3871002E61B3 /* AppLovinMediationIronSourceAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3840214C251B3871002E61B3 /* AppLovinMediationIronSourceAdapter.framework */; };
 		38C82F8D2516F17C00B3FB1A /* MTGBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C82F8C2516F17C00B3FB1A /* MTGBannerViewController.m */; };
 		38C82F912516F2B900B3FB1A /* MTGBannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C82F902516F2B900B3FB1A /* MTGBannerViewController.xib */; };
 		38C82F962517294800B3FB1A /* MTGAdServerCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C82F942517294800B3FB1A /* MTGAdServerCommunicator.m */; };
@@ -19,6 +20,12 @@
 		38C82FB5251759DD00B3FB1A /* MTGIronSourceBannerAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C82FB4251759DD00B3FB1A /* MTGIronSourceBannerAdapter.m */; };
 		38C82FB72518898C00B3FB1A /* MTGSDKBanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C82FB62518898C00B3FB1A /* MTGSDKBanner.framework */; };
 		38C82FB92518A06500B3FB1A /* BannerAdInfosData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38C82FB82518A06500B3FB1A /* BannerAdInfosData.plist */; };
+		38C82FC72519CB8500B3FB1A /* MTGMaxBannerAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C82FC42519CB8400B3FB1A /* MTGMaxBannerAdapter.m */; };
+		38C82FCA2519CBAC00B3FB1A /* MaxAdapterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C82FC92519CBAC00B3FB1A /* MaxAdapterHelper.m */; };
+		38C82FCE2519DE3F00B3FB1A /* AppLovinSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C82FCC2519DE3E00B3FB1A /* AppLovinSDK.framework */; };
+		38C82FCF2519DE3F00B3FB1A /* AppLovinSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 38C82FCD2519DE3E00B3FB1A /* AppLovinSDKResources.bundle */; };
+		38C82FD22519E3C500B3FB1A /* MTGMaxInterstitialAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C82FD12519E3C500B3FB1A /* MTGMaxInterstitialAdapter.m */; };
+		38C82FD52519E6C600B3FB1A /* MTGMaxRewardVideoAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C82FD42519E6C600B3FB1A /* MTGMaxRewardVideoAdapter.m */; };
 		996A1453221D21F400378988 /* MintegralAdapterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 996A1452221D21F400378988 /* MintegralAdapterHelper.m */; };
 		996A1454221D21F400378988 /* MintegralAdapterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 996A1452221D21F400378988 /* MintegralAdapterHelper.m */; };
 		996A1455221D21F400378988 /* MintegralAdapterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 996A1452221D21F400378988 /* MintegralAdapterHelper.m */; };
@@ -104,6 +111,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3840214C251B3871002E61B3 /* AppLovinMediationIronSourceAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppLovinMediationIronSourceAdapter.framework; sourceTree = "<group>"; };
 		38C82F8B2516F17C00B3FB1A /* MTGBannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGBannerViewController.h; sourceTree = "<group>"; };
 		38C82F8C2516F17C00B3FB1A /* MTGBannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGBannerViewController.m; sourceTree = "<group>"; };
 		38C82F902516F2B900B3FB1A /* MTGBannerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MTGBannerViewController.xib; sourceTree = "<group>"; };
@@ -128,6 +136,16 @@
 		38C82FB4251759DD00B3FB1A /* MTGIronSourceBannerAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGIronSourceBannerAdapter.m; sourceTree = "<group>"; };
 		38C82FB62518898C00B3FB1A /* MTGSDKBanner.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MTGSDKBanner.framework; sourceTree = "<group>"; };
 		38C82FB82518A06500B3FB1A /* BannerAdInfosData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BannerAdInfosData.plist; sourceTree = "<group>"; };
+		38C82FC42519CB8400B3FB1A /* MTGMaxBannerAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGMaxBannerAdapter.m; sourceTree = "<group>"; };
+		38C82FC52519CB8400B3FB1A /* MTGMaxBannerAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGMaxBannerAdapter.h; sourceTree = "<group>"; };
+		38C82FC82519CBAC00B3FB1A /* MaxAdapterHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaxAdapterHelper.h; sourceTree = "<group>"; };
+		38C82FC92519CBAC00B3FB1A /* MaxAdapterHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaxAdapterHelper.m; sourceTree = "<group>"; };
+		38C82FCC2519DE3E00B3FB1A /* AppLovinSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppLovinSDK.framework; sourceTree = "<group>"; };
+		38C82FCD2519DE3E00B3FB1A /* AppLovinSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AppLovinSDKResources.bundle; sourceTree = "<group>"; };
+		38C82FD02519E3C500B3FB1A /* MTGMaxInterstitialAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGMaxInterstitialAdapter.h; sourceTree = "<group>"; };
+		38C82FD12519E3C500B3FB1A /* MTGMaxInterstitialAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGMaxInterstitialAdapter.m; sourceTree = "<group>"; };
+		38C82FD32519E6C600B3FB1A /* MTGMaxRewardVideoAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGMaxRewardVideoAdapter.h; sourceTree = "<group>"; };
+		38C82FD42519E6C600B3FB1A /* MTGMaxRewardVideoAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGMaxRewardVideoAdapter.m; sourceTree = "<group>"; };
 		996A1451221D21F400378988 /* MintegralAdapterHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MintegralAdapterHelper.h; sourceTree = "<group>"; };
 		996A1452221D21F400378988 /* MintegralAdapterHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MintegralAdapterHelper.m; sourceTree = "<group>"; };
 		996A1456221D221900378988 /* IronSourceAdapterHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IronSourceAdapterHelper.h; sourceTree = "<group>"; };
@@ -224,12 +242,14 @@
 				38C82FB72518898C00B3FB1A /* MTGSDKBanner.framework in Frameworks */,
 				99A24FBA2212CBCE00318FE3 /* CoreLocation.framework in Frameworks */,
 				99A24FB82212CBC400318FE3 /* QuartzCore.framework in Frameworks */,
+				38C82FCE2519DE3F00B3FB1A /* AppLovinSDK.framework in Frameworks */,
 				99A24FB62212CBBC00318FE3 /* StoreKit.framework in Frameworks */,
 				99A24FB42212CBAE00318FE3 /* AdSupport.framework in Frameworks */,
 				99A24FB22212CBA400318FE3 /* libz.tbd in Frameworks */,
 				99A24FB02212CB9700318FE3 /* libsqlite3.tbd in Frameworks */,
 				99A24FAE2212CB8900318FE3 /* UIKit.framework in Frameworks */,
 				99A24FAC2212CB7E00318FE3 /* Foundation.framework in Frameworks */,
+				3840214F251B3871002E61B3 /* AppLovinMediationIronSourceAdapter.framework in Frameworks */,
 				99A24FAA2212CB7200318FE3 /* CoreGraphics.framework in Frameworks */,
 				99A24F9F2212CA6400318FE3 /* MTGSDKInterstitialVideo.framework in Frameworks */,
 				99A24FA22212CA6400318FE3 /* MTGSDKReward.framework in Frameworks */,
@@ -263,6 +283,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3840214B251B3871002E61B3 /* Ironsource */ = {
+			isa = PBXGroup;
+			children = (
+				3840214C251B3871002E61B3 /* AppLovinMediationIronSourceAdapter.framework */,
+			);
+			path = Ironsource;
+			sourceTree = "<group>";
+		};
 		38C82F932517292200B3FB1A /* Internal */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +336,55 @@
 				38C82FB12517599F00B3FB1A /* MTGMintegralBannerAdapter.m */,
 			);
 			path = Banner;
+			sourceTree = "<group>";
+		};
+		38C82FBE2519C84B00B3FB1A /* Max */ = {
+			isa = PBXGroup;
+			children = (
+				38C82FC32519CB8400B3FB1A /* Banner */,
+				38C82FC62519CB8500B3FB1A /* Interstitials */,
+				38C82FC22519CB8400B3FB1A /* RewardVideo */,
+				38C82FC82519CBAC00B3FB1A /* MaxAdapterHelper.h */,
+				38C82FC92519CBAC00B3FB1A /* MaxAdapterHelper.m */,
+			);
+			path = Max;
+			sourceTree = "<group>";
+		};
+		38C82FC22519CB8400B3FB1A /* RewardVideo */ = {
+			isa = PBXGroup;
+			children = (
+				38C82FD32519E6C600B3FB1A /* MTGMaxRewardVideoAdapter.h */,
+				38C82FD42519E6C600B3FB1A /* MTGMaxRewardVideoAdapter.m */,
+			);
+			path = RewardVideo;
+			sourceTree = "<group>";
+		};
+		38C82FC32519CB8400B3FB1A /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				38C82FC52519CB8400B3FB1A /* MTGMaxBannerAdapter.h */,
+				38C82FC42519CB8400B3FB1A /* MTGMaxBannerAdapter.m */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		38C82FC62519CB8500B3FB1A /* Interstitials */ = {
+			isa = PBXGroup;
+			children = (
+				38C82FD02519E3C500B3FB1A /* MTGMaxInterstitialAdapter.h */,
+				38C82FD12519E3C500B3FB1A /* MTGMaxInterstitialAdapter.m */,
+			);
+			path = Interstitials;
+			sourceTree = "<group>";
+		};
+		38C82FCB2519DE3E00B3FB1A /* Max */ = {
+			isa = PBXGroup;
+			children = (
+				3840214B251B3871002E61B3 /* Ironsource */,
+				38C82FCC2519DE3E00B3FB1A /* AppLovinSDK.framework */,
+				38C82FCD2519DE3E00B3FB1A /* AppLovinSDKResources.bundle */,
+			);
+			path = Max;
 			sourceTree = "<group>";
 		};
 		996A144A221D201000378988 /* Mintegral */ = {
@@ -370,13 +447,14 @@
 			path = Interstitials;
 			sourceTree = "<group>";
 		};
-		99A24F952212C72600318FE3 /* Sdk */ = {
+		99A24F952212C72600318FE3 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
+				38C82FCB2519DE3E00B3FB1A /* Max */,
 				99A24F972212C77800318FE3 /* Mintegral */,
 				99A24F962212C77200318FE3 /* IronSource */,
 			);
-			path = Sdk;
+			path = SDK;
 			sourceTree = "<group>";
 		};
 		99A24F962212C77200318FE3 /* IronSource */ = {
@@ -501,9 +579,10 @@
 		CAAD3D0F21F5978B007EF61B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				38C82FBE2519C84B00B3FB1A /* Max */,
 				996A144B221D201F00378988 /* IronSource */,
 				996A144A221D201000378988 /* Mintegral */,
-				99A24F952212C72600318FE3 /* Sdk */,
+				99A24F952212C72600318FE3 /* SDK */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -668,6 +747,7 @@
 				CA83AFB921F064C700655A95 /* Assets.xcassets in Resources */,
 				38C82FB92518A06500B3FB1A /* BannerAdInfosData.plist in Resources */,
 				CAAD3D6121F989DF007EF61B /* MTGRewardVideoViewController.xib in Resources */,
+				38C82FCF2519DE3F00B3FB1A /* AppLovinSDKResources.bundle in Resources */,
 				CAAD3D1221F5978C007EF61B /* RewardVideoAdInfosData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -703,6 +783,7 @@
 				CAAD3D5C21F9682E007EF61B /* MTGRewardVideoViewController.m in Sources */,
 				CACE7F52221BAE070074A8BB /* MTGInterstitialAdapter.m in Sources */,
 				CAAD3D3421F71E0E007EF61B /* MTGRewardVideoAdManager.m in Sources */,
+				38C82FC72519CB8500B3FB1A /* MTGMaxBannerAdapter.m in Sources */,
 				CAAD3D5F21F9687B007EF61B /* MTGInterstitialViewController.m in Sources */,
 				CACE7F4F221BADE00074A8BB /* MTGInterstitialAdManager.m in Sources */,
 				CA83AFBF21F064C700655A95 /* main.m in Sources */,
@@ -720,8 +801,11 @@
 				38C82F962517294800B3FB1A /* MTGAdServerCommunicator.m in Sources */,
 				CACE7F59221BCD280074A8BB /* MTGInterstitialCustomEvent.m in Sources */,
 				CA2556F722142124005FF563 /* MTGRewardVideoError.m in Sources */,
+				38C82FD52519E6C600B3FB1A /* MTGMaxRewardVideoAdapter.m in Sources */,
 				CAAD3D3921F71E0E007EF61B /* MTGRewardVideo.m in Sources */,
 				38C82F9A25172E3100B3FB1A /* MTGBannerAd.m in Sources */,
+				38C82FCA2519CBAC00B3FB1A /* MaxAdapterHelper.m in Sources */,
+				38C82FD22519E3C500B3FB1A /* MTGMaxInterstitialAdapter.m in Sources */,
 				996A1453221D21F400378988 /* MintegralAdapterHelper.m in Sources */,
 				38C82FA925174BC700B3FB1A /* MTGBannerError.m in Sources */,
 				38C82FB5251759DD00B3FB1A /* MTGIronSourceBannerAdapter.m in Sources */,
@@ -895,22 +979,27 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DJRJZKDWWH;
+				CODE_SIGN_IDENTITY = "Apple Development: yang wu (JSU783XALJ)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = GRCR8MKXW4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MTGMediationSample/Network/Sdk/IronSource",
 					"$(PROJECT_DIR)/MTGMediationSample/Network/Sdk/Mintegral",
+					"$(PROJECT_DIR)/MTGMediationSample/Network/SDK/Max",
+					"$(PROJECT_DIR)/MTGMediationSample/Network/SDK/Max/Ironsource",
+					"$(PROJECT_DIR)/MTGMediationSample/Network/SDK/Max/Mintergral",
 				);
 				INFOPLIST_FILE = MTGMediationSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mintegral.MTGMediationSample;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.sqinc.game.happy.dogs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = happydogs;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -919,22 +1008,27 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DJRJZKDWWH;
+				CODE_SIGN_IDENTITY = "Apple Development: yang wu (JSU783XALJ)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = GRCR8MKXW4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MTGMediationSample/Network/Sdk/IronSource",
 					"$(PROJECT_DIR)/MTGMediationSample/Network/Sdk/Mintegral",
+					"$(PROJECT_DIR)/MTGMediationSample/Network/SDK/Max",
+					"$(PROJECT_DIR)/MTGMediationSample/Network/SDK/Max/Ironsource",
+					"$(PROJECT_DIR)/MTGMediationSample/Network/SDK/Max/Mintergral",
 				);
 				INFOPLIST_FILE = MTGMediationSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mintegral.MTGMediationSample;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.sqinc.game.happy.dogs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = happydogs;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

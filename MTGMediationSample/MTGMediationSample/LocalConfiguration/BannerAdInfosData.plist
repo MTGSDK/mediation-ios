@@ -4,6 +4,18 @@
 <dict>
 	<key>bannerAd_unit1</key>
 	<array>
+<!--   Max           -->
+        <dict>
+            <key>classname</key>
+            <string>MTGMaxBannerAdapter</string>
+            <key>timeout</key>
+            <integer>10</integer>
+            <key>network</key>
+            <string>max</string>
+            <key>unitid</key>
+            <string>73f115a8b6281b6a</string>
+        </dict>
+<!--   Mintegral           -->
         <dict>
             <key>apikey</key>
             <string>7c22942b749fe6a6e361b675e96b3ee9</string>
@@ -20,6 +32,7 @@
             <key>unitid</key>
             <string>146898</string>
         </dict>
+<!--   IronSource           -->
         <dict>
             <key>classname</key>
             <string>MTGIronSourceBannerAdapter</string>
@@ -35,3 +48,4 @@
 	</array>
 </dict>
 </plist>
+ 

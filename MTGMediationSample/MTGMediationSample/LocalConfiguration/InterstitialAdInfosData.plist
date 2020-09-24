@@ -4,6 +4,20 @@
 <dict>
 	<key>interstitial_unit1</key>
 	<array>
+<!-- Max        -->
+        <dict>
+            <key>classname</key>
+            <string>MTGMaxInterstitialAdapter</string>
+            <key>timeout</key>
+            <integer>10</integer>
+            <key>network</key>
+            <string>max</string>
+            <key>unitid</key>
+<!--            <string>4c52569c82486ac7</string>-->
+            <string>b1d373f78bb44001</string>
+        </dict>
+
+<!-- Mintegral       -->
 		<dict>
 			<key>apikey</key>
 			<string>7c22942b749fe6a6e361b675e96b3ee9</string>
@@ -20,6 +34,7 @@
             <key>unitid</key>
             <string>146894</string>
 		</dict>
+<!-- IronSource       -->
 		<dict>
 			<key>classname</key>
 			<string>MTGIronSourceInterstitialAdapter</string>

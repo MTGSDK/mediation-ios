@@ -4,6 +4,10 @@
 <dict>
 	<key>Allow Arbitrary Loads</key>
 	<true/>
+	<key>AppLovinSdkKey</key>
+	<string>MziT8gS2aacKcumsF6qUd7ZPa1xoZ07xzqT5Vx84WlP8dA-tGpMvwwIVyEIVEPRCEwIksQpMADVoNUfdH0WCxq
+
+</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -13,7 +17,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Mintegral</string>
+	<string>MTGMediation</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
