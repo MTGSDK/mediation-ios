@@ -48,7 +48,15 @@
     if([info objectForKey:MTG_BANNER_PLACEMENTNAME]){
         self.placementName = [NSString stringWithFormat:@"%@",[info objectForKey:MTG_BANNER_PLACEMENTNAME]];
     }
-    
+    BOOL limit = [IronSource isBannerCappedForPlacement:self.placementName];
+    if (limit) {
+        NSString *errorMsg = @"The placement reached cap limit";
+        NSError *error = [NSError errorWithDomain:@"com.ironsource" code:-1 userInfo:@{NSLocalizedDescriptionKey : errorMsg}];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(customEventDidFailToLoadAdWithError:)]) {
+            [self.delegate customEventDidFailToLoadAdWithError:error];
+        }
+        return;
+    }
     [IronSource setBannerDelegate:self];
     
     if (![IronSourceAdapterHelper isSDKInitialized]) {
