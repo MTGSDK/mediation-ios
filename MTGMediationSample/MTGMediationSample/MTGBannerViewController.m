@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *loadAdButton;
 
 @property (nonatomic, strong) MTGBannerAd *bannerAd;
+@property (nonatomic, strong) UIView *bannerView;
 
 @end
 
@@ -58,11 +59,9 @@
 
     NSLog(@"%s",__PRETTY_FUNCTION__);
 
-    self.loadAdButton.enabled = YES;
-    NSString *msg = @"load BannerAd success";
-    [self showMsg:msg];
-
     dispatch_async(dispatch_get_main_queue(), ^{
+
+        self.loadAdButton.enabled = YES;
 
         if (@available(iOS 11.0, *)) {
             [view setCenter:CGPointMake(self.view.center.x,self.view.frame.size.height - (view.frame.size.height/2.0) - self.view.safeAreaInsets.bottom)]; // safeAreaInsets is available from iOS 11.0
@@ -70,6 +69,15 @@
             [view setCenter:CGPointMake(self.view.center.x,self.view.frame.size.height - (view.frame.size.height/2.0))];
         }
         [self.view addSubview:view];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+
+            if (self.bannerView) {
+                [self.bannerView removeFromSuperview];
+                self.bannerView = nil;
+            }
+            self.bannerView = view;
+        });
     });
 }
 
