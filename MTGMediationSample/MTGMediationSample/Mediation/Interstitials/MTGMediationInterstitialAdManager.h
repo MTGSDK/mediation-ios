@@ -1,5 +1,5 @@
 //
-//  MTGInterstitialAdManager.h
+//  MTGMediationInterstitialAdManager.h
 //  MTGMediationSample
 //
 //  Created by CharkZhang on 2019/2/19.
@@ -8,19 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "MTGInterstitialAdManagerDelegate.h"
+#import "MTGMediationInterstitialAdManagerDelegate.h"
 #import "MTGInterstitialConstants.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface MTGInterstitialAdManager : NSObject
+@interface MTGMediationInterstitialAdManager : NSObject
 
 
-@property (nonatomic, weak) id<MTGInterstitialAdManagerDelegate> delegate;
+@property (nonatomic, weak) id<MTGMediationInterstitialAdManagerDelegate> delegate;
 @property (nonatomic, assign, readonly) BOOL ready;
 
-- (id)initWithAdUnitID:(NSString *)adUnitID delegate:(id<MTGInterstitialAdManagerDelegate>)delegate;
+- (id)initWithAdUnitID:(NSString *)adUnitID delegate:(id<MTGMediationInterstitialAdManagerDelegate>)delegate;
 
 - (void)loadInterstitial;
 - (void)presentInterstitialFromViewController:(UIViewController *)controller;

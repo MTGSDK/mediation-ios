@@ -7,7 +7,7 @@
 //
 
 #import "MTGRewardVideo.h"
-#import "MTGRewardVideoAdManager.h"
+#import "MTGMediationRewardVideoAdManager.h"
 #import "MTGRewardVideoReward.h"
 #import "MTGRewardVideoError.h"
 
@@ -22,7 +22,7 @@ if ([NSThread isMainThread]) {  \
 
 static MTGRewardVideo *gSharedInstance = nil;
 
-@interface MTGRewardVideo()<MTGRewardVideoAdManagerDelegate>
+@interface MTGRewardVideo()<MTGMediationRewardVideoAdManagerDelegate>
 
 @property (nonatomic, strong) NSMutableDictionary *rewardedVideoAdManagers;
 @property (nonatomic, strong) NSLock *lock;
@@ -55,10 +55,10 @@ static MTGRewardVideo *gSharedInstance = nil;
         return;
     }
 
-    MTGRewardVideoAdManager *adManager = sharedInstance.rewardedVideoAdManagers[adUnitID];
+    MTGMediationRewardVideoAdManager *adManager = sharedInstance.rewardedVideoAdManagers[adUnitID];
     
     if (!adManager) {
-        adManager = [[MTGRewardVideoAdManager alloc] initWithAdUnitID:adUnitID delegate:sharedInstance];
+        adManager = [[MTGMediationRewardVideoAdManager alloc] initWithAdUnitID:adUnitID delegate:sharedInstance];
         sharedInstance.rewardedVideoAdManagers[adUnitID] = adManager;
     }
     adManager.mediationSettings = mediationSettings;
@@ -78,7 +78,7 @@ static MTGRewardVideo *gSharedInstance = nil;
     }
     MTGRewardVideo *sharedInstance = [[self class] sharedInstance];
     [sharedInstance.lock lock];
-    MTGRewardVideoAdManager *adManager = sharedInstance.rewardedVideoAdManagers[adUnitID];
+    MTGMediationRewardVideoAdManager *adManager = sharedInstance.rewardedVideoAdManagers[adUnitID];
     [sharedInstance.lock unlock];
     
     return [adManager hasAdAvailable];
@@ -101,7 +101,7 @@ static MTGRewardVideo *gSharedInstance = nil;
 
     MTGRewardVideo *sharedInstance = [[self class] sharedInstance];
     
-    MTGRewardVideoAdManager *adManager = sharedInstance.rewardedVideoAdManagers[adUnitID];
+    MTGMediationRewardVideoAdManager *adManager = sharedInstance.rewardedVideoAdManagers[adUnitID];
     
     if (!adManager) {
         NSLog(@"The reward video could not be shown: "

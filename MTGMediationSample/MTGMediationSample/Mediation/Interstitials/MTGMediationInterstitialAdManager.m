@@ -1,12 +1,12 @@
 //
-//  MTGInterstitialAdManager.m
+//  MTGMediationInterstitialAdManager.m
 //  MTGMediationSample
 //
 //  Created by CharkZhang on 2019/2/19.
 //  Copyright © 2019 CharkZhang. All rights reserved.
 //
 
-#import "MTGInterstitialAdManager.h"
+#import "MTGMediationInterstitialAdManager.h"
 #import "MTGInterstitialAdapter.h"
 #import "MTGAdServerCommunicator.h"
 #import "MTGInterstitialError.h"
@@ -22,7 +22,7 @@ if ([NSThread isMainThread]) {  \
 }
 
 
-@interface MTGInterstitialAdManager ()<MTGAdServerCommunicatorDelegate,MTGPrivateInnerInterstitialDelegate>
+@interface MTGMediationInterstitialAdManager ()<MTGAdServerCommunicatorDelegate,MTGPrivateInnerInterstitialDelegate>
 
 @property (nonatomic, readonly) NSString *adUnitID;
 
@@ -33,7 +33,7 @@ if ([NSThread isMainThread]) {  \
 
 @end
 
-@implementation MTGInterstitialAdManager
+@implementation MTGMediationInterstitialAdManager
 
 - (void)dealloc
 {
@@ -44,7 +44,7 @@ if ([NSThread isMainThread]) {  \
     self.adapter = nil;
 }
 
-- (id)initWithAdUnitID:(NSString *)adUnitID delegate:(id<MTGInterstitialAdManagerDelegate>)delegate{
+- (id)initWithAdUnitID:(NSString *)adUnitID delegate:(id<MTGMediationInterstitialAdManagerDelegate>)delegate{
 
     if (self = [super init]) {
         _adUnitID = [adUnitID copy];

@@ -1,18 +1,18 @@
 //
-//  MTGRewardVideoAdManager.m
+//  MTGMediationRewardVideoAdManager.m
 //  MTGMediationSample
 //
 //  Created by CharkZhang on 2019/1/17.
 //  Copyright © 2019 CharkZhang. All rights reserved.
 //
 
-#import "MTGRewardVideoAdManager.h"
+#import "MTGMediationRewardVideoAdManager.h"
 #import "MTGAdServerCommunicator.h"
 #import "MTGRewardVideoAdapter.h"
 #import "MTGRewardVideoReward.h"
 #import "MTGRewardVideoError.h"
 
-@interface MTGRewardVideoAdManager ()<MTGAdServerCommunicatorDelegate,MTGRewardVideoAdapterDelegate>
+@interface MTGMediationRewardVideoAdManager ()<MTGAdServerCommunicatorDelegate,MTGRewardVideoAdapterDelegate>
 
 @property (nonatomic, strong) MTGRewardVideoAdapter *adapter;
 @property (nonatomic, strong) MTGAdServerCommunicator *communicator;
@@ -21,13 +21,13 @@
 
 @end
 
-@implementation MTGRewardVideoAdManager
+@implementation MTGMediationRewardVideoAdManager
 
 - (void)dealloc{
     [_communicator cancel];
 }
 
-- (instancetype)initWithAdUnitID:(NSString *)adUnitID delegate:(id<MTGRewardVideoAdManagerDelegate>)delegate{
+- (instancetype)initWithAdUnitID:(NSString *)adUnitID delegate:(id<MTGMediationRewardVideoAdManagerDelegate>)delegate{
     if (self = [super init]) {
         _adUnitID = [adUnitID copy];
         _communicator = [[MTGAdServerCommunicator alloc] initWithDelegate:self];

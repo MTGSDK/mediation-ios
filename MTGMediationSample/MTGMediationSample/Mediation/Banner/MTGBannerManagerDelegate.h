@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class MTGBannerAd;
-@protocol MTGBannerAdDelegate;
+@protocol MTGMediationBannerAdDelegate;
 
 
 NS_ASSUME_NONNULL_BEGIN

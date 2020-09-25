@@ -1,5 +1,5 @@
 //
-//  MTGBannerManager.h
+//  MTGMediationBannerManager.h
 //  MTGMediationSample
 //
 //  Created by zhangchark on 2020/9/20.
@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MTGBannerManager : NSObject <MTGAdServerCommunicatorDelegate>
+@interface MTGMediationBannerManager : NSObject <MTGAdServerCommunicatorDelegate>
 
 
 

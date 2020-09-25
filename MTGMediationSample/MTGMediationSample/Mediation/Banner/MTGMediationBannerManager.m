@@ -1,19 +1,19 @@
 //
-//  MTGBannerManager.m
+//  MTGMediationBannerManager.m
 //  MTGMediationSample
 //
 //  Created by zhangchark on 2020/9/20.
 //  Copyright © 2020 CharkZhang. All rights reserved.
 //
 
-#import "MTGBannerManager.h"
+#import "MTGMediationBannerManager.h"
 #import "MTGAdServerCommunicator.h"
 #import "MTGBannerAdapter.h"
 #import <UIKit/UIKit.h>
 #import "MTGBannerError.h"
 #import "MTGBannerManagerDelegate.h"
 
-@interface MTGBannerManager ()<MTGBannerAdapterDelegate>
+@interface MTGMediationBannerManager ()<MTGBannerAdapterDelegate>
 
 @property (nonatomic, strong) MTGAdServerCommunicator *communicator;
 @property (nonatomic, strong) MTGBannerAdapter *requestingAdapter;
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation MTGBannerManager
+@implementation MTGMediationBannerManager
 
 - (id)initWithDelegate:(id<MTGBannerManagerDelegate>)delegate{
 

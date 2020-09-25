@@ -1,5 +1,5 @@
 //
-//  MTGBannerAdDelegate.h
+//  MTGMediationBannerAdDelegate.h
 //  MTGMediationSample
 //
 //  Created by zhangchark on 2020/9/20.
@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class MTGBannerAd;
 
 
-@protocol MTGBannerAdDelegate <NSObject>
+@protocol MTGMediationBannerAdDelegate <NSObject>
 
 @required
 - (UIViewController *)viewControllerForPresentingModalView;

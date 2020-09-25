@@ -1,5 +1,5 @@
 //
-//  MTGRewardVideoAdManager.h
+//  MTGMediationRewardVideoAdManager.h
 //  MTGMediationSample
 //
 //  Created by CharkZhang on 2019/1/17.
@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class MTGRewardVideoReward;
-@protocol MTGRewardVideoAdManagerDelegate <NSObject>
+@protocol MTGMediationRewardVideoAdManagerDelegate <NSObject>
 
 
 - (void)rewardVideoAdDidLoadForAdUnitID:(NSString *)adUnitID;
@@ -31,14 +31,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface MTGRewardVideoAdManager : NSObject
+@interface MTGMediationRewardVideoAdManager : NSObject
 
-@property (nonatomic, weak) id<MTGRewardVideoAdManagerDelegate> delegate;
+@property (nonatomic, weak) id<MTGMediationRewardVideoAdManagerDelegate> delegate;
 @property (nonatomic, readonly) NSString *adUnitID;
 @property (nonatomic, strong) NSDictionary *mediationSettings;
 
 
-- (instancetype)initWithAdUnitID:(NSString *)adUnitID delegate:(id<MTGRewardVideoAdManagerDelegate>)delegate;
+- (instancetype)initWithAdUnitID:(NSString *)adUnitID delegate:(id<MTGMediationRewardVideoAdManagerDelegate>)delegate;
 
 
 - (void)loadRewardedVideoAd;
