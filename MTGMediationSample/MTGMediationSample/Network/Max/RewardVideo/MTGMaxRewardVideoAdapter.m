@@ -32,7 +32,7 @@
     }
 
     NSString *errorMsg = nil;
-    if (!unitId) errorMsg = @"Invalid MTG unitId";
+    if (!unitId) errorMsg = @"Invalid max unitId";
 
     if (errorMsg) {
         NSError *error = [NSError errorWithDomain:@"com.max" code:-1 userInfo:@{NSLocalizedDescriptionKey : errorMsg}];
@@ -46,12 +46,13 @@
 
     if (![MaxAdapterHelper isSDKInitialized]) {
         
+        [MaxAdapterHelper sdkInitialized];
+
 //    #warning - Make sure to add your AppLovin SDK key in the Info.plist under the "AppLovinSdkKey" key
 //        Initialize the AppLovin SDK
         [ALSdk shared].mediationProvider = ALMediationProviderMAX;
+//        [[ALSdk shared] showMediationDebugger];
 //        [[ALSdk shared] initializeSdk];
-
-//        [MaxAdapterHelper sdkInitialized];
         [[ALSdk shared] initializeSdkWithCompletionHandler:^(ALSdkConfiguration *configuration) {
             // AppLovin SDK is initialized, start loading ads now or later if ad gate is reached
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -68,7 +69,6 @@
         });
     }
 
-//    [[ALSdk shared] showMediationDebugger];
 
 
 }
