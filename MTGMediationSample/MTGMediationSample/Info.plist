@@ -5,13 +5,11 @@
 	<key>Allow Arbitrary Loads</key>
 	<true/>
 	<key>AppLovinSdkKey</key>
-	<string>MziT8gS2aacKcumsF6qUd7ZPa1xoZ07xzqT5Vx84WlP8dA-tGpMvwwIVyEIVEPRCEwIksQpMADVoNUfdH0WCxq
-
-</string>
+	<string>Place_Your_AppLovinSdkKey</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>疯狂传送门</string>
+	<string>MTGDediationSample</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
