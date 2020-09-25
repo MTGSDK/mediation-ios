@@ -91,7 +91,6 @@
 		CACE7F52221BAE070074A8BB /* MTGInterstitialAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = CACE7F51221BAE070074A8BB /* MTGInterstitialAdapter.m */; };
 		CACE7F59221BCD280074A8BB /* MTGInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CACE7F58221BCD280074A8BB /* MTGInterstitialCustomEvent.m */; };
 		CACE7F5C221BCD410074A8BB /* MTGInterstitialError.m in Sources */ = {isa = PBXBuildFile; fileRef = CACE7F5B221BCD410074A8BB /* MTGInterstitialError.m */; };
-		DA62FBA52FFBCFC1C0FC5C14 /* Pods_MTGMediationSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076FA80B376FB5D3E66C68C8 /* Pods_MTGMediationSample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +111,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		029AD88100B9E73A12FE21D5 /* Pods-MTGMediationSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTGMediationSample.debug.xcconfig"; path = "Target Support Files/Pods-MTGMediationSample/Pods-MTGMediationSample.debug.xcconfig"; sourceTree = "<group>"; };
 		076FA80B376FB5D3E66C68C8 /* Pods_MTGMediationSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MTGMediationSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3840214C251B3871002E61B3 /* AppLovinMediationIronSourceAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppLovinMediationIronSourceAdapter.framework; sourceTree = "<group>"; };
 		384AB22B251C94BD00EE8240 /* RewardVideoAdInfosData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RewardVideoAdInfosData.plist; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 		38C82FD12519E3C500B3FB1A /* MTGMaxInterstitialAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGMaxInterstitialAdapter.m; sourceTree = "<group>"; };
 		38C82FD32519E6C600B3FB1A /* MTGMaxRewardVideoAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGMaxRewardVideoAdapter.h; sourceTree = "<group>"; };
 		38C82FD42519E6C600B3FB1A /* MTGMaxRewardVideoAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGMaxRewardVideoAdapter.m; sourceTree = "<group>"; };
-		7343A4F2C8801F361B6B889B /* Pods-MTGMediationSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTGMediationSample.release.xcconfig"; path = "Target Support Files/Pods-MTGMediationSample/Pods-MTGMediationSample.release.xcconfig"; sourceTree = "<group>"; };
 		996A1451221D21F400378988 /* MintegralAdapterHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MintegralAdapterHelper.h; sourceTree = "<group>"; };
 		996A1452221D21F400378988 /* MintegralAdapterHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MintegralAdapterHelper.m; sourceTree = "<group>"; };
 		996A1456221D221900378988 /* IronSourceAdapterHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IronSourceAdapterHelper.h; sourceTree = "<group>"; };
@@ -259,7 +256,6 @@
 				99A24FA22212CA6400318FE3 /* MTGSDKReward.framework in Frameworks */,
 				99A24FA52212CA6400318FE3 /* MTGSDK.framework in Frameworks */,
 				99A24F992212CA5A00318FE3 /* IronSource.framework in Frameworks */,
-				DA62FBA52FFBCFC1C0FC5C14 /* Pods_MTGMediationSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,15 +284,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E69014787A8BE8FA89D2496 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				029AD88100B9E73A12FE21D5 /* Pods-MTGMediationSample.debug.xcconfig */,
-				7343A4F2C8801F361B6B889B /* Pods-MTGMediationSample.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		3840214B251B3871002E61B3 /* Ironsource */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,7 +507,6 @@
 				CA83AFD221F064C700655A95 /* MTGMediationSampleUITests */,
 				CA83AFAD21F064C700655A95 /* Products */,
 				99A24FA82212CB7200318FE3 /* Frameworks */,
-				0E69014787A8BE8FA89D2496 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -660,7 +646,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA83AFD821F064C700655A95 /* Build configuration list for PBXNativeTarget "MTGMediationSample" */;
 			buildPhases = (
-				82C25DD4EF6E9A059F16B440 /* [CP] Check Pods Manifest.lock */,
 				CA83AFA821F064C600655A95 /* Sources */,
 				CA83AFA921F064C600655A95 /* Frameworks */,
 				CA83AFAA21F064C600655A95 /* Resources */,
@@ -784,31 +769,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		82C25DD4EF6E9A059F16B440 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MTGMediationSample-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CA83AFA821F064C600655A95 /* Sources */ = {
@@ -1019,12 +979,11 @@
 		};
 		CA83AFD921F064C700655A95 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 029AD88100B9E73A12FE21D5 /* Pods-MTGMediationSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development: yang wu (JSU783XALJ)";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = GRCR8MKXW4;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DJRJZKDWWH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MTGMediationSample/Network/Sdk/IronSource",
@@ -1043,19 +1002,18 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mintegral.MTGDediationSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = crazyPP;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		CA83AFDA21F064C700655A95 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7343A4F2C8801F361B6B889B /* Pods-MTGMediationSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development: yang wu (JSU783XALJ)";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = GRCR8MKXW4;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DJRJZKDWWH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MTGMediationSample/Network/Sdk/IronSource",
@@ -1074,7 +1032,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mintegral.MTGDediationSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = crazyPP;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
