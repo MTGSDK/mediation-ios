@@ -59,28 +59,31 @@ static BOOL hasSendCallBack = NO;
         userId = USERID;
     }
     
-    // After setting the delegates you can go ahead and initialize the SDK.
-    [IronSource setUserId:userId];
-    [IronSource setRewardedVideoDelegate:self];
+    dispatch_async(dispatch_get_main_queue(), ^{
 
-    if (![IronSourceAdapterHelper isSDKInitialized]) { 
-        
-        if(unitId && [unitId length] != 0 && ![unitId isEqualToString:@"null"]){
-            [IronSource initWithAppKey:appKey adUnits:@[unitId]];
-        }else{
-            [IronSource initWithAppKey:appKey];
-        }
-        [IronSourceAdapterHelper sdkInitialized];
-    }else{
+        // After setting the delegates you can go ahead and initialize the SDK.
+        [IronSource setUserId:userId];
+        [IronSource setRewardedVideoDelegate:self];
 
-        if ([self hasAdAvailable]) {
-            if (self.delegate && [self.delegate respondsToSelector:@selector(rewardedVideoDidLoadAdForCustomEvent:)]) {
-                [self.delegate rewardedVideoDidLoadAdForCustomEvent:self];
+        if (![IronSourceAdapterHelper isSDKInitialized]) {
+            
+            if(unitId && [unitId length] != 0 && ![unitId isEqualToString:@"null"]){
+                [IronSource initWithAppKey:appKey adUnits:@[unitId]];
+            }else{
+                [IronSource initWithAppKey:appKey];
             }
-            hasSendCallBack = YES;
-            return;
+            [IronSourceAdapterHelper sdkInitialized];
+        }else{
+
+            if ([self hasAdAvailable]) {
+                if (self.delegate && [self.delegate respondsToSelector:@selector(rewardedVideoDidLoadAdForCustomEvent:)]) {
+                    [self.delegate rewardedVideoDidLoadAdForCustomEvent:self];
+                }
+                hasSendCallBack = YES;
+                return;
+            }
         }
-    }
+    });
 }
 
 - (BOOL)hasAdAvailable{

@@ -15,6 +15,7 @@
     #import <MTGSDK/MTGSDK.h>
     #import <MTGSDKBanner/MTGBannerAdView.h>
 #else
+    #import "MTGSDK.h"
     #import "MTGBannerAdView.h"
 #endif
 

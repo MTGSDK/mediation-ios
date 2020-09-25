@@ -10,7 +10,7 @@
 #import "MTGAdInfo.h"
 #import "MTGBannerAd.h"
 
-@interface MTGBannerViewController ()<MTGBannerAdDelegate>
+@interface MTGBannerViewController ()<MTGMediationBannerAdDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *loadAdButton;
 
@@ -50,7 +50,7 @@
     [self presentViewController:vc animated:YES completion:NULL];
 }
 
-#pragma mark - MTGBannerAdDelegate
+#pragma mark - MTGMediationBannerAdDelegate
 - (nonnull UIViewController *)viewControllerForPresentingModalView {
     return self;
 }

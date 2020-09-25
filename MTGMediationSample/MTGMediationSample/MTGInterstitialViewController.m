@@ -7,17 +7,17 @@
 //
 
 #import "MTGInterstitialViewController.h"
-#import "MTGInterstitialAdManager.h"
+#import "MTGMediationInterstitialAdManager.h"
 
 #import "MTGAdInfo.h"
 
-@interface MTGInterstitialViewController ()<MTGInterstitialAdManagerDelegate>
+@interface MTGInterstitialViewController ()<MTGMediationInterstitialAdManagerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *loadButton;
 @property (weak, nonatomic) IBOutlet UIButton *showButton;
 
 @property (nonatomic,copy)  NSString *adUnitId;
 
-@property (nonatomic,strong)  MTGInterstitialAdManager *interstitialManager;
+@property (nonatomic,strong)  MTGMediationInterstitialAdManager *interstitialManager;
 @end
 
 @implementation MTGInterstitialViewController
@@ -33,11 +33,11 @@
 
 }
 
--(MTGInterstitialAdManager *)interstitialManager{
+-(MTGMediationInterstitialAdManager *)interstitialManager{
     if (_interstitialManager) {
         return _interstitialManager;
     }
-    _interstitialManager = [[MTGInterstitialAdManager alloc] initWithAdUnitID:self.adUnitId delegate:self];
+    _interstitialManager = [[MTGMediationInterstitialAdManager alloc] initWithAdUnitID:self.adUnitId delegate:self];
     return _interstitialManager;
 }
 
@@ -71,34 +71,34 @@
     [self presentViewController:vc animated:YES completion:NULL];
 }
 
-#pragma mark - MTGInterstitialAdManagerDelegate
+#pragma mark - MTGMediationInterstitialAdManagerDelegate
 
-- (void)manager:(MTGInterstitialAdManager *)manager didFailToLoadInterstitialWithError:(NSError *)error {
+- (void)manager:(MTGMediationInterstitialAdManager *)manager didFailToLoadInterstitialWithError:(NSError *)error {
     self.showButton.userInteractionEnabled = NO;
     NSString *msg = [NSString stringWithFormat:@"error: %@",error.description];
     [self showMsg:msg];
 }
 
-- (void)managerDidLoadInterstitial:(MTGInterstitialAdManager *)manager {
+- (void)managerDidLoadInterstitial:(MTGMediationInterstitialAdManager *)manager {
     
     self.showButton.userInteractionEnabled = YES;
     NSString *msg = [NSString stringWithFormat:@"unit %@ loadSuccess",manager];
     [self showMsg:msg];
 }
 
-- (void)managerDidPresentInterstitial:(MTGInterstitialAdManager *)manager {
+- (void)managerDidPresentInterstitial:(MTGMediationInterstitialAdManager *)manager {
     //
 }
 
-- (void)manager:(MTGInterstitialAdManager *)manager didFailToPresentInterstitialWithError:(NSError *)error {
+- (void)manager:(MTGMediationInterstitialAdManager *)manager didFailToPresentInterstitialWithError:(NSError *)error {
     //
 }
 
-- (void)managerDidReceiveTapEventFromInterstitial:(MTGInterstitialAdManager *)manager {
+- (void)managerDidReceiveTapEventFromInterstitial:(MTGMediationInterstitialAdManager *)manager {
     //
 }
 
-- (void)managerWillDismissInterstitial:(MTGInterstitialAdManager *)manager {
+- (void)managerWillDismissInterstitial:(MTGMediationInterstitialAdManager *)manager {
     //
 }
 

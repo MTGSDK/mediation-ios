@@ -44,20 +44,24 @@
         self.placementName = [NSString stringWithFormat:@"%@",[info objectForKey:MTG_INTERSTITIAL_PLACEMENTNAME]];
     }
     
-    [IronSource setInterstitialDelegate:self];
-    
-    if (![IronSourceAdapterHelper isSDKInitialized]) {
+ 
+    dispatch_async(dispatch_get_main_queue(), ^{
+
+        [IronSource setInterstitialDelegate:self];
         
-        if(unitId && [unitId length] != 0 && ![unitId isEqualToString:@"null"]){
-            [IronSource initWithAppKey:appKey adUnits:@[unitId]];
-        }else{
-            [IronSource initWithAppKey:appKey];
+        if (![IronSourceAdapterHelper isSDKInitialized]) {
+            
+            if(unitId && [unitId length] != 0 && ![unitId isEqualToString:@"null"]){
+                [IronSource initWithAppKey:appKey adUnits:@[unitId]];
+            }else{
+                [IronSource initWithAppKey:appKey];
+            }
+            
+            [IronSourceAdapterHelper sdkInitialized];
         }
-        
-        [IronSourceAdapterHelper sdkInitialized];
-    }
-    
-    [IronSource loadInterstitial];
+        [IronSource loadInterstitial];
+
+    });
 }
 
 - (BOOL)hasAdAvailable{
@@ -132,7 +136,7 @@
 
 - (void)interstitialDidShow
 {
-
+    ;
 }
 
 @end

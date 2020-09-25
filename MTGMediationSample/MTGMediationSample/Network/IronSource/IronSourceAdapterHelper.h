@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-#define IronSourceAdapterVersion  @"1.0.0"
+#define IronSourceAdapterVersion  @"1.1.0"
 
 @interface IronSourceAdapterHelper : NSObject
 

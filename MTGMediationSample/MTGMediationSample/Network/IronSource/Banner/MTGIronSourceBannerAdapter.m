@@ -88,6 +88,10 @@
 
     [IronSource loadBannerWithViewController:viewController size:size placement:self.placementName];
     
+    dispatch_async(dispatch_get_main_queue(), ^{
+
+
+    });    
 }
 
 - (void)destroy{

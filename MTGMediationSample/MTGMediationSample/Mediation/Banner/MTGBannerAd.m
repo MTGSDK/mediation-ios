@@ -7,12 +7,12 @@
 //
 
 #import "MTGBannerAd.h"
-#import "MTGBannerManager.h"
+#import "MTGMediationBannerManager.h"
 #import "MTGBannerManagerDelegate.h"
 
 @interface MTGBannerAd ()<MTGBannerManagerDelegate>
 
-@property (nonatomic, strong) MTGBannerManager *adManager;
+@property (nonatomic, strong) MTGMediationBannerManager *adManager;
 
 @end
 
@@ -32,7 +32,7 @@
     if (self = [super init])
     {
         self.adUnitId = adUnitId;
-        self.adManager = [[MTGBannerManager alloc] initWithDelegate:self];
+        self.adManager = [[MTGMediationBannerManager alloc] initWithDelegate:self];
     }
     return self;
 }

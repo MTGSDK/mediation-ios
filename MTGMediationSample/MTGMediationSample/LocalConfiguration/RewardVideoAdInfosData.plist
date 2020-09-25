@@ -2,37 +2,51 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>rewardVideo_unit1</key>
-	<array>
-		<dict>
-			<key>apikey</key>
-			<string>7c22942b749fe6a6e361b675e96b3ee9</string>
-			<key>appid</key>
-			<string>118692</string>
-			<key>classname</key>
-			<string>MTGMintegralRewardVideoAdapter</string>
-			<key>timeout</key>
-			<integer>10</integer>
-			<key>network</key>
-			<string>mintegral</string>
-			<key>placementid</key>
-			<string>138798</string>
+    <key>customized_rewardVideo_unit1</key>
+    <array>
+<!-- Mintegral        -->
+        <dict>
+            <key>apikey</key>
+            <string>7c22942b749fe6a6e361b675e96b3ee9</string>
+            <key>appid</key>
+            <string>118692</string>
+            <key>classname</key>
+            <string>MTGMintegralRewardVideoAdapter</string>
+            <key>timeout</key>
+            <integer>10</integer>
+            <key>network</key>
+            <string>mintegral</string>
+            <key>placementid</key>
+            <string>138798</string>
             <key>unitid</key>
             <string>146892</string>
-		</dict>
-		<dict>
-			<key>classname</key>
-			<string>MTGIronSourceRewardVideoAdapter</string>
-			<key>timeout</key>
-			<integer>10</integer>
-			<key>network</key>
-			<string>ironsource</string>
-			<key>placementname</key>
-			<string>placementname1</string>
-			<key>appkey</key>
-			<string>8545d445</string>
-		</dict>
-	</array>
+        </dict>
+<!-- IronSource        -->
+        <dict>
+            <key>classname</key>
+            <string>MTGIronSourceRewardVideoAdapter</string>
+            <key>timeout</key>
+            <integer>10</integer>
+            <key>network</key>
+            <string>ironsource</string>
+            <key>placementname</key>
+            <string>placementname1</string>
+            <key>appkey</key>
+            <string>8545d445</string>
+        </dict>
+<!-- Max        -->
+        <dict>
+            <key>classname</key>
+            <string>MTGMaxRewardVideoAdapter</string>
+            <key>timeout</key>
+            <integer>10</integer>
+            <key>network</key>
+            <string>max</string>
+            <key>unitid</key>
+            <string>place_your_adUnidID_here</string>
+        </dict>
+
+    </array>
 </dict>
 </plist>
 
