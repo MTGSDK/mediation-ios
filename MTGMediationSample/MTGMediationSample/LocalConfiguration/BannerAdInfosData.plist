@@ -12,11 +12,7 @@
             <key>classname</key>
             <string>MTGMintegralBannerAdapter</string>
             <key>timeout</key>
-<<<<<<< HEAD
-            <integer>10</integer>
-=======
             <integer>20</integer>
->>>>>>> 775a7a322b63a489e3effa2f2ea8df898396c426
             <key>network</key>
             <string>mintegral</string>
             <key>placementid</key>
@@ -28,11 +24,7 @@
             <key>classname</key>
             <string>MTGIronSourceBannerAdapter</string>
             <key>timeout</key>
-<<<<<<< HEAD
-            <integer>10</integer>
-=======
             <integer>20</integer>
->>>>>>> 775a7a322b63a489e3effa2f2ea8df898396c426
             <key>network</key>
             <string>ironsource</string>
             <key>placementname</key>
