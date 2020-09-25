@@ -15,6 +15,7 @@
     #import <MTGSDK/MTGSDK.h>
     #import <MTGSDKInterstitialVideo/MTGInterstitialVideoAdManager.h>
 #else
+    #import "MTGSDK.h"
     #import "MTGInterstitialVideoAdManager.h"
 #endif
 
