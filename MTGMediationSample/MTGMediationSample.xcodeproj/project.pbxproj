@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38C82F8D2516F17C00B3FB1A /* MTGBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C82F8C2516F17C00B3FB1A /* MTGBannerViewController.m */; };
+		38C82F912516F2B900B3FB1A /* MTGBannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C82F902516F2B900B3FB1A /* MTGBannerViewController.xib */; };
+		38C82F962517294800B3FB1A /* MTGAdServerCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C82F942517294800B3FB1A /* MTGAdServerCommunicator.m */; };
+		38C82F9A25172E3100B3FB1A /* MTGBannerAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C82F9925172E3100B3FB1A /* MTGBannerAd.m */; };
+		38C82F9E25172F6700B3FB1A /* MTGBannerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C82F9D25172F6700B3FB1A /* MTGBannerManager.m */; };
+		38C82FA42517430000B3FB1A /* MTGBannerAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C82FA32517430000B3FB1A /* MTGBannerAdapter.m */; };
+		38C82FA925174BC700B3FB1A /* MTGBannerError.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C82FA825174BC700B3FB1A /* MTGBannerError.m */; };
+		38C82FAC25174F7400B3FB1A /* MTGBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C82FAB25174F7400B3FB1A /* MTGBannerCustomEvent.m */; };
+		38C82FB22517599F00B3FB1A /* MTGMintegralBannerAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C82FB12517599F00B3FB1A /* MTGMintegralBannerAdapter.m */; };
+		38C82FB5251759DD00B3FB1A /* MTGIronSourceBannerAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C82FB4251759DD00B3FB1A /* MTGIronSourceBannerAdapter.m */; };
+		38C82FB72518898C00B3FB1A /* MTGSDKBanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C82FB62518898C00B3FB1A /* MTGSDKBanner.framework */; };
+		38C82FB92518A06500B3FB1A /* BannerAdInfosData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38C82FB82518A06500B3FB1A /* BannerAdInfosData.plist */; };
 		996A1453221D21F400378988 /* MintegralAdapterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 996A1452221D21F400378988 /* MintegralAdapterHelper.m */; };
 		996A1454221D21F400378988 /* MintegralAdapterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 996A1452221D21F400378988 /* MintegralAdapterHelper.m */; };
 		996A1455221D21F400378988 /* MintegralAdapterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 996A1452221D21F400378988 /* MintegralAdapterHelper.m */; };
@@ -45,7 +57,6 @@
 		99A24FC02212CBED00318FE3 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A24FBF2212CBED00318FE3 /* Accelerate.framework */; };
 		99A24FC22212CBF800318FE3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A24FC12212CBF800318FE3 /* AVFoundation.framework */; };
 		99A24FC42212CC0200318FE3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A24FC32212CC0200318FE3 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		CA0E89ED221D09BB00F45C14 /* MTGInterstitialAdServerCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0E89EC221D09BB00F45C14 /* MTGInterstitialAdServerCommunicator.m */; };
 		CA0E89F1221D393300F45C14 /* InterstitialAdInfosData.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA0E89EF221D393300F45C14 /* InterstitialAdInfosData.plist */; };
 		CA2556F022129DE9005FF563 /* MTGRewardVideoReward.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2556EF22129DE9005FF563 /* MTGRewardVideoReward.m */; };
 		CA2556F722142124005FF563 /* MTGRewardVideoError.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2556F622142124005FF563 /* MTGRewardVideoError.m */; };
@@ -62,7 +73,6 @@
 		CAAD3D3421F71E0E007EF61B /* MTGRewardVideoAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAD3D2721F71E0E007EF61B /* MTGRewardVideoAdManager.m */; };
 		CAAD3D3521F71E0E007EF61B /* MTGRewardVideoAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAD3D2A21F71E0E007EF61B /* MTGRewardVideoAdapter.m */; };
 		CAAD3D3721F71E0E007EF61B /* MTGRewardVideoCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAD3D2E21F71E0E007EF61B /* MTGRewardVideoCustomEvent.m */; };
-		CAAD3D3821F71E0E007EF61B /* MTGAdServerCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAD3D3121F71E0E007EF61B /* MTGAdServerCommunicator.m */; };
 		CAAD3D3921F71E0E007EF61B /* MTGRewardVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAD3D3221F71E0E007EF61B /* MTGRewardVideo.m */; };
 		CAAD3D3C21F722AA007EF61B /* MTGMediationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAD3D3B21F722AA007EF61B /* MTGMediationManager.m */; };
 		CAAD3D5821F96577007EF61B /* MTGAdTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAD3D5721F96577007EF61B /* MTGAdTableTableViewController.m */; };
@@ -94,6 +104,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		38C82F8B2516F17C00B3FB1A /* MTGBannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGBannerViewController.h; sourceTree = "<group>"; };
+		38C82F8C2516F17C00B3FB1A /* MTGBannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGBannerViewController.m; sourceTree = "<group>"; };
+		38C82F902516F2B900B3FB1A /* MTGBannerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MTGBannerViewController.xib; sourceTree = "<group>"; };
+		38C82F942517294800B3FB1A /* MTGAdServerCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGAdServerCommunicator.m; sourceTree = "<group>"; };
+		38C82F952517294800B3FB1A /* MTGAdServerCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGAdServerCommunicator.h; sourceTree = "<group>"; };
+		38C82F9825172E3100B3FB1A /* MTGBannerAd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGBannerAd.h; sourceTree = "<group>"; };
+		38C82F9925172E3100B3FB1A /* MTGBannerAd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGBannerAd.m; sourceTree = "<group>"; };
+		38C82F9B25172E6F00B3FB1A /* MTGBannerAdDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGBannerAdDelegate.h; sourceTree = "<group>"; };
+		38C82F9C25172F6700B3FB1A /* MTGBannerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGBannerManager.h; sourceTree = "<group>"; };
+		38C82F9D25172F6700B3FB1A /* MTGBannerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGBannerManager.m; sourceTree = "<group>"; };
+		38C82F9F251731D000B3FB1A /* MTGBannerManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGBannerManagerDelegate.h; sourceTree = "<group>"; };
+		38C82FA22517430000B3FB1A /* MTGBannerAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGBannerAdapter.h; sourceTree = "<group>"; };
+		38C82FA32517430000B3FB1A /* MTGBannerAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGBannerAdapter.m; sourceTree = "<group>"; };
+		38C82FA725174BC700B3FB1A /* MTGBannerError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGBannerError.h; sourceTree = "<group>"; };
+		38C82FA825174BC700B3FB1A /* MTGBannerError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGBannerError.m; sourceTree = "<group>"; };
+		38C82FAA25174F7400B3FB1A /* MTGBannerCustomEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGBannerCustomEvent.h; sourceTree = "<group>"; };
+		38C82FAB25174F7400B3FB1A /* MTGBannerCustomEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGBannerCustomEvent.m; sourceTree = "<group>"; };
+		38C82FAD2517513400B3FB1A /* MTGBannerConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGBannerConstants.h; sourceTree = "<group>"; };
+		38C82FB02517599F00B3FB1A /* MTGMintegralBannerAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGMintegralBannerAdapter.h; sourceTree = "<group>"; };
+		38C82FB12517599F00B3FB1A /* MTGMintegralBannerAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGMintegralBannerAdapter.m; sourceTree = "<group>"; };
+		38C82FB3251759DD00B3FB1A /* MTGIronSourceBannerAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGIronSourceBannerAdapter.h; sourceTree = "<group>"; };
+		38C82FB4251759DD00B3FB1A /* MTGIronSourceBannerAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGIronSourceBannerAdapter.m; sourceTree = "<group>"; };
+		38C82FB62518898C00B3FB1A /* MTGSDKBanner.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MTGSDKBanner.framework; sourceTree = "<group>"; };
+		38C82FB82518A06500B3FB1A /* BannerAdInfosData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BannerAdInfosData.plist; sourceTree = "<group>"; };
 		996A1451221D21F400378988 /* MintegralAdapterHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MintegralAdapterHelper.h; sourceTree = "<group>"; };
 		996A1452221D21F400378988 /* MintegralAdapterHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MintegralAdapterHelper.m; sourceTree = "<group>"; };
 		996A1456221D221900378988 /* IronSourceAdapterHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IronSourceAdapterHelper.h; sourceTree = "<group>"; };
@@ -121,8 +155,6 @@
 		99A24FC12212CBF800318FE3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		99A24FC32212CC0200318FE3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		CA0E89E8221CF5EB00F45C14 /* MTGPrivateInterstitialDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGPrivateInterstitialDelegate.h; sourceTree = "<group>"; };
-		CA0E89EB221D09BB00F45C14 /* MTGInterstitialAdServerCommunicator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGInterstitialAdServerCommunicator.h; sourceTree = "<group>"; };
-		CA0E89EC221D09BB00F45C14 /* MTGInterstitialAdServerCommunicator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGInterstitialAdServerCommunicator.m; sourceTree = "<group>"; };
 		CA0E89EF221D393300F45C14 /* InterstitialAdInfosData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InterstitialAdInfosData.plist; sourceTree = "<group>"; };
 		CA2556EE22129DE9005FF563 /* MTGRewardVideoReward.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGRewardVideoReward.h; sourceTree = "<group>"; };
 		CA2556EF22129DE9005FF563 /* MTGRewardVideoReward.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGRewardVideoReward.m; sourceTree = "<group>"; };
@@ -152,12 +184,10 @@
 		CAAD3D2721F71E0E007EF61B /* MTGRewardVideoAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGRewardVideoAdManager.m; sourceTree = "<group>"; };
 		CAAD3D2921F71E0E007EF61B /* MTGRewardVideoCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGRewardVideoCustomEvent.h; sourceTree = "<group>"; };
 		CAAD3D2A21F71E0E007EF61B /* MTGRewardVideoAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGRewardVideoAdapter.m; sourceTree = "<group>"; };
-		CAAD3D2B21F71E0E007EF61B /* MTGAdServerCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGAdServerCommunicator.h; sourceTree = "<group>"; };
 		CAAD3D2C21F71E0E007EF61B /* MTGRewardVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGRewardVideo.h; sourceTree = "<group>"; };
 		CAAD3D2E21F71E0E007EF61B /* MTGRewardVideoCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGRewardVideoCustomEvent.m; sourceTree = "<group>"; };
 		CAAD3D2F21F71E0E007EF61B /* MTGRewardVideoAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGRewardVideoAdManager.h; sourceTree = "<group>"; };
 		CAAD3D3021F71E0E007EF61B /* MTGRewardVideoAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGRewardVideoAdapter.h; sourceTree = "<group>"; };
-		CAAD3D3121F71E0E007EF61B /* MTGAdServerCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGAdServerCommunicator.m; sourceTree = "<group>"; };
 		CAAD3D3221F71E0E007EF61B /* MTGRewardVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGRewardVideo.m; sourceTree = "<group>"; };
 		CAAD3D3A21F722A9007EF61B /* MTGMediationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGMediationManager.h; sourceTree = "<group>"; };
 		CAAD3D3B21F722AA007EF61B /* MTGMediationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGMediationManager.m; sourceTree = "<group>"; };
@@ -191,6 +221,7 @@
 				99A24FC02212CBED00318FE3 /* Accelerate.framework in Frameworks */,
 				99A24FBE2212CBE400318FE3 /* MobileCoreServices.framework in Frameworks */,
 				99A24FBC2212CBDA00318FE3 /* CoreTelephony.framework in Frameworks */,
+				38C82FB72518898C00B3FB1A /* MTGSDKBanner.framework in Frameworks */,
 				99A24FBA2212CBCE00318FE3 /* CoreLocation.framework in Frameworks */,
 				99A24FB82212CBC400318FE3 /* QuartzCore.framework in Frameworks */,
 				99A24FB62212CBBC00318FE3 /* StoreKit.framework in Frameworks */,
@@ -232,9 +263,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38C82F932517292200B3FB1A /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				38C82F952517294800B3FB1A /* MTGAdServerCommunicator.h */,
+				38C82F942517294800B3FB1A /* MTGAdServerCommunicator.m */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		38C82F9725172E1A00B3FB1A /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				38C82FAD2517513400B3FB1A /* MTGBannerConstants.h */,
+				38C82F9825172E3100B3FB1A /* MTGBannerAd.h */,
+				38C82F9925172E3100B3FB1A /* MTGBannerAd.m */,
+				38C82F9B25172E6F00B3FB1A /* MTGBannerAdDelegate.h */,
+				38C82F9C25172F6700B3FB1A /* MTGBannerManager.h */,
+				38C82F9D25172F6700B3FB1A /* MTGBannerManager.m */,
+				38C82F9F251731D000B3FB1A /* MTGBannerManagerDelegate.h */,
+				38C82FA22517430000B3FB1A /* MTGBannerAdapter.h */,
+				38C82FA32517430000B3FB1A /* MTGBannerAdapter.m */,
+				38C82FA725174BC700B3FB1A /* MTGBannerError.h */,
+				38C82FA825174BC700B3FB1A /* MTGBannerError.m */,
+				38C82FAA25174F7400B3FB1A /* MTGBannerCustomEvent.h */,
+				38C82FAB25174F7400B3FB1A /* MTGBannerCustomEvent.m */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		38C82FAE2517593400B3FB1A /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				38C82FB3251759DD00B3FB1A /* MTGIronSourceBannerAdapter.h */,
+				38C82FB4251759DD00B3FB1A /* MTGIronSourceBannerAdapter.m */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		38C82FAF2517593E00B3FB1A /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				38C82FB02517599F00B3FB1A /* MTGMintegralBannerAdapter.h */,
+				38C82FB12517599F00B3FB1A /* MTGMintegralBannerAdapter.m */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
 		996A144A221D201000378988 /* Mintegral */ = {
 			isa = PBXGroup;
 			children = (
+				38C82FAF2517593E00B3FB1A /* Banner */,
 				996A144F221D205C00378988 /* Interstitials */,
 				996A144E221D205700378988 /* RewardVideo */,
 				996A1451221D21F400378988 /* MintegralAdapterHelper.h */,
@@ -246,6 +325,7 @@
 		996A144B221D201F00378988 /* IronSource */ = {
 			isa = PBXGroup;
 			children = (
+				38C82FAE2517593400B3FB1A /* Banner */,
 				996A144D221D205000378988 /* RewardVideo */,
 				996A144C221D204500378988 /* Interstitials */,
 				996A1456221D221900378988 /* IronSourceAdapterHelper.h */,
@@ -310,6 +390,7 @@
 		99A24F972212C77800318FE3 /* Mintegral */ = {
 			isa = PBXGroup;
 			children = (
+				38C82FB62518898C00B3FB1A /* MTGSDKBanner.framework */,
 				99A24F9E2212CA6400318FE3 /* MTGSDK.framework */,
 				99A24F9C2212CA6400318FE3 /* MTGSDKInterstitialVideo.framework */,
 				99A24F9D2212CA6400318FE3 /* MTGSDKReward.framework */,
@@ -369,6 +450,9 @@
 				CA83AFB021F064C700655A95 /* AppDelegate.m */,
 				CAAD3D5621F96577007EF61B /* MTGAdTableTableViewController.h */,
 				CAAD3D5721F96577007EF61B /* MTGAdTableTableViewController.m */,
+				38C82F8B2516F17C00B3FB1A /* MTGBannerViewController.h */,
+				38C82F8C2516F17C00B3FB1A /* MTGBannerViewController.m */,
+				38C82F902516F2B900B3FB1A /* MTGBannerViewController.xib */,
 				CAAD3D5A21F9682E007EF61B /* MTGRewardVideoViewController.h */,
 				CAAD3D5B21F9682E007EF61B /* MTGRewardVideoViewController.m */,
 				CAAD3D6021F989DF007EF61B /* MTGRewardVideoViewController.xib */,
@@ -404,8 +488,10 @@
 		CA83AFE121F0711A00655A95 /* Mediation */ = {
 			isa = PBXGroup;
 			children = (
+				38C82F9725172E1A00B3FB1A /* Banner */,
 				CAAD3D3A21F722A9007EF61B /* MTGMediationManager.h */,
 				CAAD3D3B21F722AA007EF61B /* MTGMediationManager.m */,
+				38C82F932517292200B3FB1A /* Internal */,
 				CAAD3D3321F71E0E007EF61B /* Interstitials */,
 				CAAD3D2621F71E0E007EF61B /* RewardVideo */,
 			);
@@ -425,6 +511,7 @@
 		CAAD3D1021F5978B007EF61B /* LocalConfiguration */ = {
 			isa = PBXGroup;
 			children = (
+				38C82FB82518A06500B3FB1A /* BannerAdInfosData.plist */,
 				CA0E89EF221D393300F45C14 /* InterstitialAdInfosData.plist */,
 				CAAD3D1121F5978B007EF61B /* RewardVideoAdInfosData.plist */,
 				CAAD3D1921F598E5007EF61B /* MTGAdInfo.h */,
@@ -443,8 +530,6 @@
 				CAAD3D2721F71E0E007EF61B /* MTGRewardVideoAdManager.m */,
 				CAAD3D3021F71E0E007EF61B /* MTGRewardVideoAdapter.h */,
 				CAAD3D2A21F71E0E007EF61B /* MTGRewardVideoAdapter.m */,
-				CAAD3D2B21F71E0E007EF61B /* MTGAdServerCommunicator.h */,
-				CAAD3D3121F71E0E007EF61B /* MTGAdServerCommunicator.m */,
 				CAAD3D2921F71E0E007EF61B /* MTGRewardVideoCustomEvent.h */,
 				CAAD3D2E21F71E0E007EF61B /* MTGRewardVideoCustomEvent.m */,
 				CA2556EE22129DE9005FF563 /* MTGRewardVideoReward.h */,
@@ -469,8 +554,6 @@
 				CACE7F5A221BCD410074A8BB /* MTGInterstitialError.h */,
 				CACE7F5B221BCD410074A8BB /* MTGInterstitialError.m */,
 				CA0E89E8221CF5EB00F45C14 /* MTGPrivateInterstitialDelegate.h */,
-				CA0E89EB221D09BB00F45C14 /* MTGInterstitialAdServerCommunicator.h */,
-				CA0E89EC221D09BB00F45C14 /* MTGInterstitialAdServerCommunicator.m */,
 			);
 			path = Interstitials;
 			sourceTree = "<group>";
@@ -579,9 +662,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA0E89F1221D393300F45C14 /* InterstitialAdInfosData.plist in Resources */,
+				38C82F912516F2B900B3FB1A /* MTGBannerViewController.xib in Resources */,
 				CA83AFBC21F064C700655A95 /* LaunchScreen.storyboard in Resources */,
 				CAAD3D6321F989F6007EF61B /* MTGInterstitialViewController.xib in Resources */,
 				CA83AFB921F064C700655A95 /* Assets.xcassets in Resources */,
+				38C82FB92518A06500B3FB1A /* BannerAdInfosData.plist in Resources */,
 				CAAD3D6121F989DF007EF61B /* MTGRewardVideoViewController.xib in Resources */,
 				CAAD3D1221F5978C007EF61B /* RewardVideoAdInfosData.plist in Resources */,
 			);
@@ -609,16 +694,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAAD3D2421F71E06007EF61B /* MTGMintegralRewardVideoAdapter.m in Sources */,
+				38C82F9E25172F6700B3FB1A /* MTGBannerManager.m in Sources */,
 				99A24F912212AC2600318FE3 /* MTGIronSourceInterstitialAdapter.m in Sources */,
 				CAAD3D3C21F722AA007EF61B /* MTGMediationManager.m in Sources */,
+				38C82FB22517599F00B3FB1A /* MTGMintegralBannerAdapter.m in Sources */,
+				38C82F8D2516F17C00B3FB1A /* MTGBannerViewController.m in Sources */,
 				996A1458221D221900378988 /* IronSourceAdapterHelper.m in Sources */,
 				CAAD3D5C21F9682E007EF61B /* MTGRewardVideoViewController.m in Sources */,
 				CACE7F52221BAE070074A8BB /* MTGInterstitialAdapter.m in Sources */,
-				CA0E89ED221D09BB00F45C14 /* MTGInterstitialAdServerCommunicator.m in Sources */,
 				CAAD3D3421F71E0E007EF61B /* MTGRewardVideoAdManager.m in Sources */,
 				CAAD3D5F21F9687B007EF61B /* MTGInterstitialViewController.m in Sources */,
 				CACE7F4F221BADE00074A8BB /* MTGInterstitialAdManager.m in Sources */,
 				CA83AFBF21F064C700655A95 /* main.m in Sources */,
+				38C82FA42517430000B3FB1A /* MTGBannerAdapter.m in Sources */,
 				CACE7F5C221BCD410074A8BB /* MTGInterstitialError.m in Sources */,
 				CA83AFB121F064C700655A95 /* AppDelegate.m in Sources */,
 				CAAD3D3721F71E0E007EF61B /* MTGRewardVideoCustomEvent.m in Sources */,
@@ -627,12 +715,16 @@
 				CAAD3D5821F96577007EF61B /* MTGAdTableTableViewController.m in Sources */,
 				CAAD3D3521F71E0E007EF61B /* MTGRewardVideoAdapter.m in Sources */,
 				99A24F8C2212AC1000318FE3 /* MTGMintegralInterstitialAdapter.m in Sources */,
-				CAAD3D3821F71E0E007EF61B /* MTGAdServerCommunicator.m in Sources */,
 				CA2556F022129DE9005FF563 /* MTGRewardVideoReward.m in Sources */,
+				38C82FAC25174F7400B3FB1A /* MTGBannerCustomEvent.m in Sources */,
+				38C82F962517294800B3FB1A /* MTGAdServerCommunicator.m in Sources */,
 				CACE7F59221BCD280074A8BB /* MTGInterstitialCustomEvent.m in Sources */,
 				CA2556F722142124005FF563 /* MTGRewardVideoError.m in Sources */,
 				CAAD3D3921F71E0E007EF61B /* MTGRewardVideo.m in Sources */,
+				38C82F9A25172E3100B3FB1A /* MTGBannerAd.m in Sources */,
 				996A1453221D21F400378988 /* MintegralAdapterHelper.m in Sources */,
+				38C82FA925174BC700B3FB1A /* MTGBannerError.m in Sources */,
+				38C82FB5251759DD00B3FB1A /* MTGIronSourceBannerAdapter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

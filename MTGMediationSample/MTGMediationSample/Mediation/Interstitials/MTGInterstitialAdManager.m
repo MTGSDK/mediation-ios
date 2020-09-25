@@ -8,7 +8,7 @@
 
 #import "MTGInterstitialAdManager.h"
 #import "MTGInterstitialAdapter.h"
-#import "MTGInterstitialAdServerCommunicator.h"
+#import "MTGAdServerCommunicator.h"
 #import "MTGInterstitialError.h"
 
 
@@ -22,12 +22,12 @@ if ([NSThread isMainThread]) {  \
 }
 
 
-@interface MTGInterstitialAdManager ()<MTGInterstitialAdServerCommunicatorDelegate,MTGPrivateInnerInterstitialDelegate>
+@interface MTGInterstitialAdManager ()<MTGAdServerCommunicatorDelegate,MTGPrivateInnerInterstitialDelegate>
 
 @property (nonatomic, readonly) NSString *adUnitID;
 
 @property (nonatomic, strong) MTGInterstitialAdapter *adapter;
-@property (nonatomic, strong) MTGInterstitialAdServerCommunicator *communicator;
+@property (nonatomic, strong) MTGAdServerCommunicator *communicator;
 
 @property (nonatomic, assign) BOOL loading;
 
@@ -48,7 +48,7 @@ if ([NSThread isMainThread]) {  \
 
     if (self = [super init]) {
         _adUnitID = [adUnitID copy];
-        _communicator = [[MTGInterstitialAdServerCommunicator alloc] initWithDelegate:self];
+        _communicator = [[MTGAdServerCommunicator alloc] initWithDelegate:self];
         _delegate = delegate;
     }
     
@@ -64,8 +64,9 @@ if ([NSThread isMainThread]) {  \
     }
     
     self.loading = YES;
-    
-    [self.communicator requestAdUnitInfosWithAdUnit:_adUnitID];
+
+    MTGMediationAdType adType = MTGMediationAdTypeInteristialAd;
+    [self.communicator requestAdUnitInfosWithAdUnit:_adUnitID adType:(adType)];
 }
 
 -(BOOL)ready{

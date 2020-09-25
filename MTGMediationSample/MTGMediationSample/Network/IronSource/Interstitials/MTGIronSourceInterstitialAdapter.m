@@ -20,7 +20,7 @@
 
 - (void)requestInterstitialWithCustomEventInfo:(NSDictionary *)info{
     
-    NSString *appKey;
+    NSString *appKey = nil;
     if([info objectForKey:MTG_APPKEY]){
         appKey = [NSString stringWithFormat:@"%@",[info objectForKey:MTG_APPKEY]];
     }

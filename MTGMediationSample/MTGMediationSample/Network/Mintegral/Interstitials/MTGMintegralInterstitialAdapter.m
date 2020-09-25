@@ -21,11 +21,11 @@
 @interface MTGMintegralInterstitialAdapter () <MTGInterstitialVideoDelegate>
 
 @property (nonatomic, copy) NSString *adUnit;
-@property (nonatomic, readwrite, strong) MTGInterstitialVideoAdManager *mtgInterstitialVideoAdManager;
-@property (nonatomic,assign) long lastLoadTime;
-@end
+@property (nonatomic, copy) NSString *placementId;
 
-static BOOL isInterstitialSuccess = NO;
+@property (nonatomic, readwrite, strong) MTGInterstitialVideoAdManager *mtgInterstitialVideoAdManager;
+
+@end
 
 @implementation MTGMintegralInterstitialAdapter
 
@@ -66,6 +66,7 @@ static BOOL isInterstitialSuccess = NO;
         return;
     }
     
+    self.placementId = placementId;
     self.adUnit = unitId;
     
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -79,22 +80,16 @@ static BOOL isInterstitialSuccess = NO;
         if (!self.mtgInterstitialVideoAdManager) {
             self.mtgInterstitialVideoAdManager = [[MTGInterstitialVideoAdManager alloc] initWithPlacementId:placementId unitId:self.adUnit delegate:self];
         }
-        
-        isInterstitialSuccess = NO;
+
         [self.mtgInterstitialVideoAdManager loadAd];
         
     });
 }
 
 - (BOOL)hasAdAvailable{
-    if(isInterstitialSuccess){
-        long curTime = [[NSDate date] timeIntervalSince1970] ;
-        long tempTime = curTime - self.lastLoadTime;
-        if( tempTime > 3600  ){
-            isInterstitialSuccess = NO;
-        }
-    }
-    return isInterstitialSuccess;
+
+    BOOL availableAd = [self.mtgInterstitialVideoAdManager isVideoReadyToPlayWithPlacementId:self.placementId unitId:self.adUnit];
+    return availableAd;
 }
 
 - (void)presentInterstitialFromViewController:(UIViewController *)viewController{
@@ -117,8 +112,6 @@ static BOOL isInterstitialSuccess = NO;
  */
 - (void)onInterstitialVideoLoadSuccess:(MTGInterstitialVideoAdManager *_Nonnull)adManager
 {
-    isInterstitialSuccess = YES;
-    self.lastLoadTime = [[NSDate date] timeIntervalSince1970] ;
     if (self.delegate && [self.delegate respondsToSelector:@selector(didLoadInterstitial)]) {
         [self.delegate didLoadInterstitial];
     }

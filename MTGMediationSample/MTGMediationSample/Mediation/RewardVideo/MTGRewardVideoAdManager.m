@@ -47,7 +47,8 @@
     
     self.loading = YES;
 
-    [self.communicator requestAdUnitInfosWithAdUnit:_adUnitID];
+    MTGMediationAdType adType = MTGMediationAdTypeRewardVideoAd;
+    [self.communicator requestAdUnitInfosWithAdUnit:_adUnitID adType:(adType)];
 }
 
 - (BOOL)hasAdAvailable{

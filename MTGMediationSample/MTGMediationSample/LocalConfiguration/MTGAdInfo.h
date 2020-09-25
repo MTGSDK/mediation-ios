@@ -21,6 +21,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSArray *)interstitialAdUnitIds;
 + (NSArray *)interstitialInfosWithAdUnitId:(NSString *)adUnitId;
 
+
+//Banner
++ (NSArray *)bannerAdUnitIds;
++ (NSArray *)bannerInfosWithAdUnitId:(NSString *)adUnitId;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
